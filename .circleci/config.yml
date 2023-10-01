@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "25:43:dd:b2:55:3d:b1:c7:f1:8b:85:fd:1c:f5:19:47"
+      - checkout
+      - run:
+          name: Set NODE_NO_WARNINGS variable
+          command: export NODE_NO_WARNINGS=1
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t nicolaszelarayan/digital-mirage:$CIRCLE_SHA1 .
+      - run: docker push nicolaszelarayan/digital-mirage:$CIRCLE_SHA1
+      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas@reciclarg.cloud "sudo docker stop reciclarg_container || true"
+      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas@reciclarg.cloud "docker rm reciclarg_container || true"
+      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas@reciclarg.cloud "docker run -p 8082:80 -d --name digital-mirage nicolaszelarayan/digital-mirage:$CIRCLE_SHA1"
+
