@@ -1,4 +1,4 @@
-import Footer from "./components/Layout/footer.jsx";
+import Footer from "./components/layout/footer.jsx";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
