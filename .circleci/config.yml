@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "34:52:7e:df:1c:2b:b6:52:44:c1:bf:63:da:a4:a9:83"
+      - checkout
+      - run:
+          name: Set NODE_NO_WARNINGS variable
+          command: export NODE_NO_WARNINGS=1
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t nicolaszelarayan/digital-mirage:$CIRCLE_SHA1 .
+      - run: docker push nicolaszelarayan/digital-mirage:$CIRCLE_SHA1
+      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas@4.201.48.204 "sudo docker stop digital_mirage || true"
+      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas@4.201.48.204 "docker rm digital-mirage || true"
+      - run: ssh -o StrictHostKeyChecking=no -t -t nicolas@4.201.48.204 "docker run -p 8082:80 -d --name digital-mirage nicolaszelarayan/digital-mirage:$CIRCLE_SHA1"
