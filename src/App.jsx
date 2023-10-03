@@ -1,6 +1,6 @@
 // Importar los componentes necesarios desde sus respectivos archivos.
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "./components/layout/header.jsx";
+import Footer from "./components/layout/footer.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 
