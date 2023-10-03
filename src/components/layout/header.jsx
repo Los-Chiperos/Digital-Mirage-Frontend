@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Banner from '../fragments/Banner';
+import Banner from '../fragments/Banner.jsx';
+import Login from '../Fragments/Login.jsx';
 
 const Header = () => {
     return (
@@ -48,6 +49,7 @@ const Header = () => {
                                 />
                             </svg>
                         </button>
+                        <Login />
                     </div>
                     <div
                         className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

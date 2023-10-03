@@ -1,126 +1,143 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-
+    // Obtén la función de navegación de react-router-dom
     const navigate = useNavigate();
 
+    // Estados para el modal
     const [isOpen, setIsOpen] = useState(false);
+
+    // Estados para el correo electrónico y la contraseña
     const [email, setEmail] = useState('');
-    const [isValid, setIsValid] = useState(true);
+    const [isValidEmail, setIsValidEmail] = useState(true);
     const [password, setPassword] = useState('');
     const [isValidPassword, setIsValidPassword] = useState(true);
 
+    // Función para validar el correo electrónico
     const validateEmail = (email) => {
-        // Expresión regular para validar correos electrónicos
         const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
         return regex.test(email);
     };
 
-    const handleChange = (ev) => {
+    // Manejar cambios en el campo de correo electrónico
+    const handleChangeEmail = (ev) => {
         const inputEmail = ev.target.value;
         setEmail(inputEmail);
-        setIsValid(validateEmail(inputEmail));
+        setIsValidEmail(validateEmail(inputEmail));
     };
 
+    // Función para validar la contraseña
     const validatePassword = (password) => {
-        // Debe tener al menos 8 caracteres
         if (password.length < 8) {
             return false;
         }
-
-        // Debe contener al menos una letra mayúscula
         if (!/[A-Z]/.test(password)) {
             return false;
         }
-
-        // Debe contener al menos una letra minúscula
         if (!/[a-z]/.test(password)) {
             return false;
         }
-
-        // Debe contener al menos un número
         if (!/[0-9]/.test(password)) {
             return false;
         }
-
         return true;
     };
 
+    // Manejar cambios en el campo de contraseña
     const handleChangePassword = (e) => {
         const inputPassword = e.target.value;
         setPassword(inputPassword);
         setIsValidPassword(validatePassword(inputPassword));
     };
 
-    const openModal = (ev) => {
+    // Abrir el modal
+    const openModal = () => {
         setIsOpen(true);
-    }
+    };
 
-    const closeModal = (ev) => {
+    // Cerrar el modal
+    const closeModal = () => {
         setIsOpen(false);
-    }
+    };
 
-    const handleSubmit = (ev) => {
+    // Manejar el envío del formulario
+    const handleSubmit = async (ev) => {
+        ev.preventDefault();
         try {
-            const response = axios.post('url', { email, password });
-            console.log(`Respuesta del servido: ${response.data}`);
+            // Realizar una solicitud POST con Axios
+            const response = await axios.post('url', { email, password });
+            console.log(`Respuesta del servidor: ${response.data}`);
             navigate("/");
         } catch (error) {
             console.log(`Error al enviar la solicitud de ingreso: ${error}`);
         }
-    }
+    };
 
     return (
         <>
-            <button onClick={openModal} className='btn btn-success'>Comentar</button>
+            <button onClick={openModal} className='button is-success'>
+                Ingresar
+            </button>
             <hr />
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>
-                <div className='modal-content'>
-                    <form action="" onSubmit={handleSubmit}>
-                        <div class="field">
-                            <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="Email" name='email' onChange={handleChange} value={email} />
-                                {isValid ? null : <p style={{ color: 'red' }}>Email no válido</p>}
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                    <i class="fas fa-check"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="field">
-                            <p class="control has-icons-left">
-                                <input class="input" type="password" placeholder="Password" name='password'
-                                    value={password}
-                                    onChange={handleChangePassword} />
-                                {isValidPassword ? null : (
-                                    <p style={{ color: 'red' }}>
-                                        La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.
-                                    </p>
-                                )}
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="field">
-                            <p class="control">
-                                <button class="button is-success">
-                                    Login
-                                </button>
-                            </p>
-                        </div>
-                        <button type='submit' class="modal-close is-large" aria-label="close"></button>
-                    </form>
-                    <button className='btn btn-block' onClick={closeModal}>X</button>
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Ingreso de usuario</p>
+                        <button onClick={closeModal} class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <form action="" onSubmit={handleSubmit}>
+                            <div className="field">
+                                <p className="control has-icons-left">
+                                    <input
+                                        className="input"
+                                        type="email"
+                                        placeholder="Email"
+                                        name="email"
+                                        onChange={handleChangeEmail}
+                                        value={email}
+                                    />
+                                    {isValidEmail ? null : (
+                                        <p style={{ color: 'red' }}>Email no válido</p>
+                                    )}
+                                    <span className="icon is-small is-left">
+                                        <i className="fas fa-envelope"></i>
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="field">
+                                <p className="control has-icons-left">
+                                    <input
+                                        className="input"
+                                        type="password"
+                                        placeholder="Password"
+                                        name="password"
+                                        value={password}
+                                        onChange={handleChangePassword}
+                                    />
+                                    {isValidPassword ? null : (
+                                        <p style={{ color: 'red' }}>
+                                            La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número.
+                                        </p>
+                                    )}
+                                    <span className="icon is-small is-left">
+                                        <i className="fas fa-lock"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </form>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button type="submit" class="button is-success">Log in</button>
+                    </footer>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Login;
