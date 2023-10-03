@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../Fragments/Banner.jsx';
+import Registro from '../Fragments/Registro.jsx';
+import Login from '../Fragments/Login.jsx';
 
 const Header = () => {
     return (
