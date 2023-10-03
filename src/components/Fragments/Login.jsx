@@ -67,12 +67,13 @@ const Login = () => {
         ev.preventDefault();
         try {
             // Realizar una solicitud POST con Axios
-            const response = await axios.post('url', { email, password });
+            const response = await axios.post('/user/login', { email, password });
             console.log(`Respuesta del servidor: ${response.data}`);
             navigate("/");
         } catch (error) {
             console.log(`Error al enviar la solicitud de ingreso: ${error}`);
         }
+        console.log("click")
     };
 
     return (
@@ -83,14 +84,14 @@ const Login = () => {
             <hr />
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Ingreso de usuario</p>
-                        <button onClick={closeModal} class="delete" aria-label="close"></button>
+                <div className="modal-background"></div>
+                <div className="modal-card">
+                    <header className="modal-card-head">
+                        <p className="modal-card-title">Ingreso de usuario</p>
+                        <button onClick={closeModal} className="delete" aria-label="close"></button>
                     </header>
-                    <section class="modal-card-body">
-                        <form action="" onSubmit={handleSubmit}>
+                    <section className="modal-card-body">
+                        <form action="" onSubmit={handleSubmit} method='POST'>
                             <div className="field">
                                 <p className="control has-icons-left">
                                     <input
@@ -131,8 +132,8 @@ const Login = () => {
                             </div>
                         </form>
                     </section>
-                    <footer class="modal-card-foot">
-                        <button type="submit" class="button is-success">Log in</button>
+                    <footer className="modal-card-foot">
+                        <button type="submit" className="button is-success">Log in</button>
                     </footer>
                 </div>
             </div>
