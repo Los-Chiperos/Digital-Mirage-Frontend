@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <h1>Hola mundo desde el footer</h1>
+    <h1>prueba psh</h1>
   );
 }
 export default Footer;
