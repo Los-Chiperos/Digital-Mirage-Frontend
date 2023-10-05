@@ -7,7 +7,6 @@ import Router from "./Router";
 // Definir el componente principal de la aplicación.
 function App() {
   return (
-    
     // Usar BrowserRouter para habilitar el enrutamiento en React Router.
     <BrowserRouter>
       {/* Mostrar el componente Header en la parte superior de la aplicación. */}
