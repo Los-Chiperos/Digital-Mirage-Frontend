@@ -3,6 +3,9 @@ import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
+import ProductList from "./components/Fragments/ProductList.jsx";
+
+
 
 // Definir el componente principal de la aplicación.
 function App() {
@@ -19,7 +22,9 @@ function App() {
       </main>
 
       {/* Mostrar el componente Footer en la parte inferior de la aplicación. */}
+      <ProductList />
       <Footer />
+
     </BrowserRouter>
   );
 }
