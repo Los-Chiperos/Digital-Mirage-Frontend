@@ -1,6 +1,8 @@
 // Importar los componentes necesarios desde sus respectivos archivos.
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
+import Banner2 from "./components/Fragments/Banner2.jsx";
+
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 import ProductList from "./components/Fragments/ProductList.jsx";
@@ -23,6 +25,8 @@ function App() {
 
       {/* Mostrar el componente Footer en la parte inferior de la aplicación. */}
       <ProductList />
+      <Banner2 />
+
       <Footer />
 
     </BrowserRouter>

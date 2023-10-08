@@ -1,5 +1,7 @@
 
 import React from 'react';
+import Banner2 from '../Fragments/Banner2.jsx';
+
 
 function ProductCard({ imageSrc, productName, category, rating, price }) {
   return (
@@ -137,7 +139,9 @@ function ProductList() {
         category: 'Cargador portátil',
         rating: 4.7,
         price: '$392.99',
+        
       },
+      
 
   
   ];
@@ -157,8 +161,12 @@ function ProductList() {
           />
         ))}
       </div>
+        <p></p>
     </div>
-  );
+    
+    );
+
 }
+
 
 export default ProductList;
