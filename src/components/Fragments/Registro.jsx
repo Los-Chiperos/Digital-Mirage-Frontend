@@ -54,16 +54,7 @@ const Registro = () => {
                                 </div>
                             </div>
 
-                            <div className="field">
-                                <label className="label">Username</label>
-                                <div className="control">
-                                    <input className="input is-success" type="text" placeholder="Ejemplo1234" />
-                                </div>
-                                {
-                                    //  <p className="help is-success">This username is available</p>
-                                }
 
-                            </div>
 
                             <div className="field">
                                 <label className="label">Email</label>
