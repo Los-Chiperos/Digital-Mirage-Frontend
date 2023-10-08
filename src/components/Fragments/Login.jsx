@@ -88,7 +88,7 @@ const Login = () => {
                                         placeholder="Email"
                                         name="email"
                                         onChange={handleChangeEmail}
-                                        value={email}
+                                        value={username}
                                     />
                                     {isValidEmail ? null : (
                                         <p style={{ color: 'red' }}>Email no válido</p>
