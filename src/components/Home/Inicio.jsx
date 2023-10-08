@@ -1,4 +1,5 @@
 import React from "react";
+import ProductList from "../Fragments/ProductList.jsx";
 
 function Inicio() {
    return (
@@ -41,6 +42,8 @@ function Inicio() {
     </form>
   );
 }
+
+
 
 
 

@@ -1,6 +1,8 @@
 
 import React from 'react';
 import Banner2 from '../Fragments/Banner2.jsx';
+import Inicio from '../Home/Inicio.jsx';
+
 
 
 function ProductCard({ imageSrc, productName, category, rating, price }) {
@@ -66,7 +68,7 @@ function ProductList() {
       productName: 'Auriculares vincha Bluetooth P9',
       category: 'Auriculares',
       rating: 5.0,
-      price: '$129.99',
+      price: '$10000',
     },
     {
       id: 4,
@@ -82,13 +84,13 @@ function ProductList() {
       productName: 'Power Bank 12000mAh',
       category: 'Cargador portátil',
       rating: 4.7,
-      price: '$39.99',
+      price: '$12000',
     },
     {
         id: 6,
-        imageSrc: '/docs/images/products/power-bank.png',
-        productName: 'Powerbank SUONO 20000MAH multiple',
-        category: 'Cargador portátil',
+        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/12/Diseno-sin-titulo-78-510x510.png',
+        productName: 'Auricular Bluetooth SUONO Wireless E6s',
+        category: 'Auriculares',
         rating: 4.7,
         price: '$39.99',
       },
@@ -98,7 +100,7 @@ function ProductList() {
         productName: 'Auricular Bluetooth A7 TUBO',
         category: 'Auriculares',
         rating: 4.7,
-        price: '$39.99',
+        price: '$6500',
       },
       {
         id: 8,
@@ -106,7 +108,7 @@ function ProductList() {
         productName: 'Auricular Gomita AKG S8/S9/S10+',
         category: 'Auriculares',
         rating: 4.7,
-        price: '$39.99',
+        price: '$2500',
       },
       {
         id: 9,
@@ -114,23 +116,23 @@ function ProductList() {
         productName: 'Parlante Bluetooth 2×4″ ORYX OR103/101',
         category: 'Parlantes',
         rating: 4.7,
-        price: '$39.99',
+        price: '$15000',
       },
       {
         id: 10,
-        imageSrc: '/docs/images/products/power-bank.png',
-        productName: 'Power Bank 10000mAh',
-        category: 'Cargador portátil',
+        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-23-at-10.43.35-AM.jpeg',
+        productName: 'Auricular Vincha Bluetooth Plegable YO8 P15',
+        category: 'Auriculares',
         rating: 4.7,
-        price: '$39.99',
+        price: '$9800',
       },
       {
         id: 11,
         imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/11/4-510x510.png',
         productName: 'Parlante Bluetooth Oryx DUBAI 15¨',
-        category: 'Cargador portátil',
+        category: 'Parlantes',
         rating: 4.7,
-        price: '$39.99',
+        price: '$85000',
       },
       {
         id: 12,
@@ -138,7 +140,7 @@ function ProductList() {
         productName: 'Parlante Portatil Bluetooth Dinax INTRO 3″ 300W',
         category: 'Parlantes',
         rating: 4.7,
-        price: '$392.99',
+        price: '$500',
         
       },
       
