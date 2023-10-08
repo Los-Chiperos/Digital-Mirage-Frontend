@@ -5,14 +5,14 @@ import axios from 'axios';
 const Login = () => {
     const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
-    const [email, setEmail] = useState('');
+    const [username, setEmail] = useState('');
     const [isValidEmail, setIsValidEmail] = useState(true);
     const [password, setPassword] = useState('');
     const [isValidPassword, setIsValidPassword] = useState(true);
 
-    const validateEmail = (email) => {
+    const validateEmail = (username) => {
         const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-        return regex.test(email);
+        return regex.test(username);
     };
 
     const handleChangeEmail = (ev) => {
