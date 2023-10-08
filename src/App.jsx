@@ -15,13 +15,14 @@ function App() {
   return (
     // Usar BrowserRouter para habilitar el enrutamiento en React Router.
     <BrowserRouter>
+    
       {/* Mostrar el componente Header en la parte superior de la aplicación. */}
       <Header />
 
       {/* El contenido principal de la página se renderizará aquí. */}
       <main>
-        {/* El componente Router se encargará de cargar los componentes asociados a las rutas. */}
         <Router />
+        {/* El componente Router se encargará de cargar los componentes asociados a las rutas. */}
       </main>
       <Banner />
       <Router />
@@ -34,7 +35,7 @@ function App() {
 
     </BrowserRouter>
 
-    
+
   );
 }
 
