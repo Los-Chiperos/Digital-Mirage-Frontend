@@ -3,32 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-    // Obtén la función de navegación de react-router-dom
     const navigate = useNavigate();
-
-    // Estados para el modal
     const [isOpen, setIsOpen] = useState(false);
-
-    // Estados para el correo electrónico y la contraseña
     const [email, setEmail] = useState('');
     const [isValidEmail, setIsValidEmail] = useState(true);
     const [password, setPassword] = useState('');
     const [isValidPassword, setIsValidPassword] = useState(true);
 
-    // Función para validar el correo electrónico
     const validateEmail = (email) => {
         const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
         return regex.test(email);
     };
 
-    // Manejar cambios en el campo de correo electrónico
     const handleChangeEmail = (ev) => {
         const inputEmail = ev.target.value;
         setEmail(inputEmail);
         setIsValidEmail(validateEmail(inputEmail));
     };
 
-    // Función para validar la contraseña
     const validatePassword = (password) => {
         if (password.length < 8) {
             return false;
@@ -45,37 +37,32 @@ const Login = () => {
         return true;
     };
 
-    // Manejar cambios en el campo de contraseña
     const handleChangePassword = (e) => {
         const inputPassword = e.target.value;
         setPassword(inputPassword);
         setIsValidPassword(validatePassword(inputPassword));
     };
 
-    // Abrir el modal
     const openModal = () => {
         setIsOpen(true);
     };
 
-    // Cerrar el modal
     const closeModal = () => {
         setIsOpen(false);
     };
 
-    // Manejar el envío del formulario
     const handleSubmit = async (ev) => {
         ev.preventDefault();
-        try {
-            // Realizar una solicitud POST con Axios a la nueva URL
-            const response = await axios.post('https://back.digital-mirage.ar/user/login', { email, password });
-            console.log(`Respuesta del servidor: ${response.data}`);
-            navigate("/");
-        } catch (error) {
-            console.log(`Error al enviar la solicitud de ingreso: ${error}`);
+        if (isValidEmail && isValidPassword) {
+            try {
+                const response = await axios.post('https://back.digital-mirage.ar/user/login', { email, password });
+                console.log(`Respuesta del servidor: ${response.data}`);
+                navigate("/");
+            } catch (error) {
+                console.log(`Error al enviar la solicitud de ingreso: ${error}`);
+            }
         }
-        console.log("click");
     };
-
 
     return (
         <>
@@ -131,11 +118,11 @@ const Login = () => {
                                     </span>
                                 </p>
                             </div>
+                            <footer className="modal-card-foot">
+                                <button type="submit" className="button is-success">Log in</button>
+                            </footer>
                         </form>
                     </section>
-                    <footer className="modal-card-foot">
-                        <button type="submit" className="button is-success">Log in</button>
-                    </footer>
                 </div>
             </div>
         </>
