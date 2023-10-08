@@ -55,7 +55,7 @@ const Login = () => {
         ev.preventDefault();
         if (isValidEmail && isValidPassword) {
             try {
-                const response = await axios.post('https://back.digital-mirage.ar/user/login', { email, password });
+                const response = await axios.post('https://back.digital-mirage.ar/user/login', { username, password });
                 console.log(`Respuesta del servidor: ${response.data}`);
                 navigate("/");
             } catch (error) {
@@ -88,7 +88,7 @@ const Login = () => {
                                         placeholder="Email"
                                         name="email"
                                         onChange={handleChangeEmail}
-                                        value={username}
+                                        value={email}
                                     />
                                     {isValidEmail ? null : (
                                         <p style={{ color: 'red' }}>Email no válido</p>
