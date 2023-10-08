@@ -66,15 +66,16 @@ const Login = () => {
     const handleSubmit = async (ev) => {
         ev.preventDefault();
         try {
-            // Realizar una solicitud POST con Axios
-            const response = await axios.post('/user/login', { email, password });
+            // Realizar una solicitud POST con Axios a la nueva URL
+            const response = await axios.post('https://back.digital-mirage.ar/user/login', { email, password });
             console.log(`Respuesta del servidor: ${response.data}`);
             navigate("/");
         } catch (error) {
             console.log(`Error al enviar la solicitud de ingreso: ${error}`);
         }
-        console.log("click")
+        console.log("click");
     };
+
 
     return (
         <>
