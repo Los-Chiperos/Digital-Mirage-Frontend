@@ -2,6 +2,7 @@
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Banner2 from "./components/Fragments/Banner2.jsx";
+import Banner from "./components/Fragments/Banner.jsx";
 
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
@@ -22,6 +23,8 @@ function App() {
         {/* El componente Router se encargará de cargar los componentes asociados a las rutas. */}
         <Router />
       </main>
+      <Banner />
+      <Router />
 
       {/* Mostrar el componente Footer en la parte inferior de la aplicación. */}
       <ProductList />
@@ -30,6 +33,8 @@ function App() {
       <Footer />
 
     </BrowserRouter>
+
+    
   );
 }
 
