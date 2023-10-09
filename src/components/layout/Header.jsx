@@ -7,7 +7,7 @@ import Login from '../Fragments/Login.jsx';
 
 const Header = () => {
     return (
-        
+
         <div>
             <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -17,9 +17,9 @@ const Header = () => {
                             className="h-12 "
                             alt="Digital Mirage Logo"
                         />
-                       
                     </Link>
                     <div className="flex md:order-2">
+                        <Login />
                         <Registro />
                         <button
                             data-collapse-toggle="navbar-sticky"
@@ -45,7 +45,6 @@ const Header = () => {
                                 />
                             </svg>
                         </button>
-                        <Login />
                     </div>
                     <div
                         className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

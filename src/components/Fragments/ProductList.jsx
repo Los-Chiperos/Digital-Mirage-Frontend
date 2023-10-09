@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Banner2 from '../Fragments/Banner2.jsx';
 import Inicio from '../Home/Inicio.jsx';
@@ -7,12 +6,12 @@ import Inicio from '../Home/Inicio.jsx';
 
 function ProductCard({ imageSrc, productName, category, rating, price }) {
   return (
-    
+
 
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      
+
       <a href="#">
-     
+
         <img className="p-8 rounded-t-lg" src={imageSrc} alt="product image" />
       </a>
       <div className="px-5 pb-5">
@@ -87,65 +86,65 @@ function ProductList() {
       price: '$12000',
     },
     {
-        id: 6,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/12/Diseno-sin-titulo-78-510x510.png',
-        productName: 'Auricular Bluetooth SUONO Wireless E6s',
-        category: 'Auriculares',
-        rating: 4.7,
-        price: '$39.99',
-      },
-      {
-        id: 7,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2023/09/Diseno-sin-titulo-70-510x510.png',
-        productName: 'Auricular Bluetooth A7 TUBO',
-        category: 'Auriculares',
-        rating: 4.7,
-        price: '$6500',
-      },
-      {
-        id: 8,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/02/Auricular-Gomita-AKG-S8-S9-S10.jpg',
-        productName: 'Auricular Gomita AKG S8/S9/S10+',
-        category: 'Auriculares',
-        rating: 4.7,
-        price: '$2500',
-      },
-      {
-        id: 9,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2023/08/Diseno-sin-titulo-2023-08-01T100521.793-510x510.png',
-        productName: 'Parlante Bluetooth 2×4″ ORYX OR103/101',
-        category: 'Parlantes',
-        rating: 4.7,
-        price: '$15000',
-      },
-      {
-        id: 10,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-23-at-10.43.35-AM.jpeg',
-        productName: 'Auricular Vincha Bluetooth Plegable YO8 P15',
-        category: 'Auriculares',
-        rating: 4.7,
-        price: '$9800',
-      },
-      {
-        id: 11,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/11/4-510x510.png',
-        productName: 'Parlante Bluetooth Oryx DUBAI 15¨',
-        category: 'Parlantes',
-        rating: 4.7,
-        price: '$85000',
-      },
-      {
-        id: 12,
-        imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2023/01/Diseno-sin-titulo-41-510x510.png',
-        productName: 'Parlante Portatil Bluetooth Dinax INTRO 3″ 300W',
-        category: 'Parlantes',
-        rating: 4.7,
-        price: '$500',
-        
-      },
-      
+      id: 6,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/12/Diseno-sin-titulo-78-510x510.png',
+      productName: 'Auricular Bluetooth SUONO Wireless E6s',
+      category: 'Auriculares',
+      rating: 4.7,
+      price: '$39.99',
+    },
+    {
+      id: 7,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2023/09/Diseno-sin-titulo-70-510x510.png',
+      productName: 'Auricular Bluetooth A7 TUBO',
+      category: 'Auriculares',
+      rating: 4.7,
+      price: '$6500',
+    },
+    {
+      id: 8,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/02/Auricular-Gomita-AKG-S8-S9-S10.jpg',
+      productName: 'Auricular Gomita AKG S8/S9/S10+',
+      category: 'Auriculares',
+      rating: 4.7,
+      price: '$2500',
+    },
+    {
+      id: 9,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2023/08/Diseno-sin-titulo-2023-08-01T100521.793-510x510.png',
+      productName: 'Parlante Bluetooth 2×4″ ORYX OR103/101',
+      category: 'Parlantes',
+      rating: 4.7,
+      price: '$15000',
+    },
+    {
+      id: 10,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-23-at-10.43.35-AM.jpeg',
+      productName: 'Auricular Vincha Bluetooth Plegable YO8 P15',
+      category: 'Auriculares',
+      rating: 4.7,
+      price: '$9800',
+    },
+    {
+      id: 11,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2022/11/4-510x510.png',
+      productName: 'Parlante Bluetooth Oryx DUBAI 15¨',
+      category: 'Parlantes',
+      rating: 4.7,
+      price: '$85000',
+    },
+    {
+      id: 12,
+      imageSrc: 'https://dazimportadora.com.ar/wp-content/uploads/2023/01/Diseno-sin-titulo-41-510x510.png',
+      productName: 'Parlante Portatil Bluetooth Dinax INTRO 3″ 300W',
+      category: 'Parlantes',
+      rating: 4.7,
+      price: '$500',
 
-  
+    },
+
+
+
   ];
 
   return (
@@ -163,10 +162,10 @@ function ProductList() {
           />
         ))}
       </div>
-        <p></p>
+      <p></p>
     </div>
-    
-    );
+
+  );
 
 }
 

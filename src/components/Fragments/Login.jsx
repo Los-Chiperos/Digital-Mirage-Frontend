@@ -66,7 +66,7 @@ const Login = () => {
 
     return (
         <>
-            <button onClick={openModal} className='button is-success'>
+            <button onClick={openModal} className='button is-success mr-3'>
                 Ingresar
             </button>
             <hr />

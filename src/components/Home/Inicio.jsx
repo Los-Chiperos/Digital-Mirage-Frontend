@@ -2,11 +2,11 @@ import React from "react";
 import ProductList from "../Fragments/ProductList.jsx";
 
 function Inicio() {
-   return (
+  return (
 
-    
+
     <form className="px-6 py-2">
-   
+
       <div className="relative">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg

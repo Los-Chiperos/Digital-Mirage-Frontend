@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="bg-white rounded-lg shadow-1xl  m-4">
       <div className="w-full max-w-screen-xl mx-auto p-1  md:py-8">
-            <img src="https://i.postimg.cc/jdZqGQx2/logo-ecommerce-removebg-preview.png" className="h-14 mr-3 " alt="Digital Mirage" />
+        <img src="https://i.postimg.cc/jdZqGQx2/logo-ecommerce-removebg-preview.png" className="h-14 mr-3 " alt="Digital Mirage" />
         <div className="sm:flex sm:items-center sm:justify-center">
           <a href="http://digital-mirage.ar/" className="flex items-center mb-4 sm:mb-0">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
