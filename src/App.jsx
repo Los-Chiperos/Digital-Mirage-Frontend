@@ -1,4 +1,5 @@
-// Importar los componentes necesarios desde sus respectivos archivos.
+import React, { useState, useEffect } from 'react';
+import LoadingScreen from "./components/Fragments/LoadingScreen.jsx";
 import Header from "./components/layout/Header.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Banner2 from "./components/Fragments/Banner2.jsx";
@@ -6,30 +7,33 @@ import Banner from "./components/Fragments/Banner.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 
-// Definir el componente principal de la aplicación.
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // Oculta la pantalla de carga después de 2.5 segundos
+  }, []);
+
   return (
-    // Usar BrowserRouter para habilitar el enrutamiento en React Router.
     <BrowserRouter>
-
-      {/* Mostrar el componente Header en la parte superior de la aplicación. */}
-      <Header />
-
-      <Banner />
-      {/* El contenido principal de la página se renderizará aquí. */}
-      <main>
-      <Router />
-        {/* El componente Router se encargará de cargar los componentes asociados a las rutas. */}
-      </main>
-
-      <Banner2 />
-
-      {/* Mostrar el componente Footer en la parte inferior de la aplicación. */}
-      <Footer />
-
+    {isLoading ? (
+      <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
+      ) : (
+      <div>
+      
+          <Header />
+          <Banner />
+          <main>
+            <Router />
+          </main>
+          <Banner2 />
+          <Footer />
+        </div>
+      )}
     </BrowserRouter>
   );
 }
 
-// Exportar el componente App para su uso en otros lugares de la aplicación.
 export default App;
