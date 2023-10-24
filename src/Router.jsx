@@ -5,6 +5,7 @@ import AcercaDe from "./components/Pages/AcercaDe";
 import Categorias from "./components/Pages/Categorias";
 import Contacto from "./components/Pages/Contacto";
 import Servicios from "./components/Pages/Servicios";
+import Nosotros from "./components/Pages/Nosotros";
 
 const Router = () => {
     return (
