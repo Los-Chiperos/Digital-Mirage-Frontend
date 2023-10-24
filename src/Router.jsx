@@ -15,6 +15,7 @@ const Router = () => {
                 <Route exact path="/categorias" element={<Categorias />} />
                 <Route exact path="/servicios" element={<Servicios />} />
                 <Route exact path="/contacto" element={<Contacto />} />
+                <Route exact path="/nosotros" element={<Nosotros />} />
             </Routes>
         </div>
     )

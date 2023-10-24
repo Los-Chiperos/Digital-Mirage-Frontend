@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2500); // Oculta la pantalla de carga después de 2.5 segundos
+    }, 1500); // Oculta la pantalla de carga después de 2.5 segundos
   }, []);
 
   return (
