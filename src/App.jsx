@@ -18,20 +18,19 @@ function App() {
   }, []);
 
   return (
-     <BrowserRouter>
-    {isLoading ? (
-      <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
+    <BrowserRouter>
+      {isLoading ? (
+        <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
       ) : (
-      <div>
-
+        <div>
           <Header />
-          <Banner />
+          {/* Condicional para mostrar o no el Banner en función de la ruta */}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && <Banner />}
           <main>
             <Router />
           </main>
           <Banner2 />
           <Footer />
-
         </div>
       )}
     </BrowserRouter>
@@ -39,4 +38,3 @@ function App() {
 }
 
 export default App;
-

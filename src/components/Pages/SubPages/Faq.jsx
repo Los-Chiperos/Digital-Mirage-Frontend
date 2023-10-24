@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Faq = () => {
   const [openAccordion, setOpenAccordion] = useState(null);
 
