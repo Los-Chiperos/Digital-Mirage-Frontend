@@ -120,8 +120,4 @@ Nuestro equipo está aquí para ayudarlo.</p>
     </section>
   );
 };
-
-
-
-
 export default Contacto;

@@ -18,23 +18,22 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+
+      <BrowserRouter>
       {isLoading ? (
         <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
-      ) : (
+        ) : (
         <div>
-          <Header />
-          <Banner />
-          <main>
-            <Routes>
-              <Route path="/nosotros" element={<Nosotros />} />
-              {/* Otras rutas pueden ser definidas aquí */}
-            </Routes>
-          </main>
-          <Banner2 />
-          <Footer />
-        </div>
-      )}
+  
+            <Header />
+            <Banner />
+            <main>
+              <Router />
+            </main>
+            <Banner2 />
+            <Footer />
+          </div>
+        )}
     </BrowserRouter>
   );
 }
