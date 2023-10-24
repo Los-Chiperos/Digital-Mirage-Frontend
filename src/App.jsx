@@ -6,7 +6,6 @@ import Footer from './components/layout/Footer.jsx';
 import Banner2 from './components/Fragments/Banner2.jsx';
 import Banner from './components/Fragments/Banner.jsx';
 import Router from './Router';
-import Faq from './components/Pages/SubPages/Faq.jsx';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,20 +17,20 @@ function App() {
   }, []);
 
   return (
-     <BrowserRouter>
-    {isLoading ? (
-      <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
+    <BrowserRouter>
+      {isLoading ? (
+        <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
       ) : (
-      <div>
-
+        <div>
           <Header />
-          <Banner />
+          {/* Condicional para mostrar o no el Banner en función de la ruta */}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && <Banner />}
           <main>
             <Router />
-          </main>
-          <Banner2 />
+            </main>
+          {/* Condicional para mostrar o no el Banner2 en función de la ruta */}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && <Banner2 />}
           <Footer />
-
         </div>
       )}
     </BrowserRouter>
@@ -39,4 +38,3 @@ function App() {
 }
 
 export default App;
-
