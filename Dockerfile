@@ -4,6 +4,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm cache clean --force  # Limpia la caché de Node Modules
+RUN npm install --save @fortawesome/fontawesome-svg-core
 RUN npm run build
 
 # Etapa 2: Configurar Nginx para servir la aplicación
