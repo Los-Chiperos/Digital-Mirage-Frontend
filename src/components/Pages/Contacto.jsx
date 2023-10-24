@@ -7,15 +7,15 @@ const Contacto = () => {
       <div className="container px-6 py-12 mx-auto">
         <div>
           <p className="font-medium text-blue-500 dark:text-blue-400">Contactanos</p>
+<br></br>
+          <h1 className="xl:text-4xlp-4  sm:p-12  text-3xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto title-margin">
+  Contactate con nosotros
+</h1>
+ <p className="text-gray-500 text-lg text-center font-normal pb-3">
+ Nos encantaría saber cual es su consulta. Por favor complete este formulario o envíenos un correo electrónico.
 
-          <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
-            Comunicate con nuestro equipo
-          </h1>
+                </p>
 
-          <p className="mt-3 text-gray-500 dark:text-gray-400">
-            
-Nos encantaría saber cual es su consulta. Por favor complete este formulario o envíenos un correo electrónico.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
@@ -78,7 +78,7 @@ Nuestro equipo está aquí para ayudarlo.</p>
                   <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Nombre</label>
                   <input
                     type="text"
-                    placeholder="John"
+                    placeholder="Nombre"
                     className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
@@ -87,7 +87,7 @@ Nuestro equipo está aquí para ayudarlo.</p>
                   <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Apellido</label>
                   <input
                     type="text"
-                    placeholder="Doe"
+                    placeholder="Apellido"
                     className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
@@ -106,7 +106,7 @@ Nuestro equipo está aquí para ayudarlo.</p>
                 <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Mensaje</label>
                 <textarea
                   className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Message"
+                  placeholder="Mensaje"
                 ></textarea>
               </div>
 

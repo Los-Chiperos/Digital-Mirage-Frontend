@@ -60,6 +60,7 @@ const Faq = () => {
   ];
 
   return (
+    
     <div className="w-full bg-gray-50 bg-cover" style={{ backgroundImage: `url("/images/faq2.avif")` }}>
       {/* :TITLE & IMAGE */}
       <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
