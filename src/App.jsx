@@ -6,7 +6,7 @@ import Footer from './components/layout/Footer.jsx';
 import Banner2 from './components/Fragments/Banner2.jsx';
 import Banner from './components/Fragments/Banner.jsx';
 import Router from './Router';
-import Faq from './components/Pages/SubPages/faq.jsx';
+import Faq from './components/Pages/SubPages/Faq.jsx';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
