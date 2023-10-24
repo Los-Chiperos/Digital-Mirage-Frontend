@@ -6,6 +6,7 @@ import Categorias from "./components/Pages/Categorias";
 import Contacto from "./components/Pages/Contacto";
 import Servicios from "./components/Pages/Servicios";
 import Nosotros from "./components/Pages/Nosotros";
+import Faq from "./components/Pages/SubPages/faq";
 
 const Router = () => {
     return (
@@ -17,6 +18,8 @@ const Router = () => {
                 <Route exact path="/servicios" element={<Servicios />} />
                 <Route exact path="/contacto" element={<Contacto />} />
                 <Route exact path="/nosotros" element={<Nosotros />} />
+                <Route exact path="/faq" element={<Faq />} />
+
             </Routes>
         </div>
     )

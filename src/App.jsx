@@ -5,8 +5,8 @@ import Header from './components/layout/Header.jsx';
 import Footer from './components/layout/Footer.jsx';
 import Banner2 from './components/Fragments/Banner2.jsx';
 import Banner from './components/Fragments/Banner.jsx';
-import Nosotros from './components/Pages/Nosotros.jsx';
 import Router from './Router';
+import Faq from './components/Pages/SubPages/faq.jsx';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,22 +18,22 @@ function App() {
   }, []);
 
   return (
+     <BrowserRouter>
+    {isLoading ? (
+      <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
+      ) : (
+      <div>
 
-      <BrowserRouter>
-      {isLoading ? (
-        <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
-        ) : (
-        <div>
-  
-            <Header />
-            <Banner />
-            <main>
-              <Router />
-            </main>
-            <Banner2 />
-            <Footer />
-          </div>
-        )}
+          <Header />
+          <Banner />
+          <main>
+            <Router />
+          </main>
+          <Banner2 />
+          <Footer />
+
+        </div>
+      )}
     </BrowserRouter>
   );
 }
