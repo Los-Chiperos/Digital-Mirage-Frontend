@@ -62,7 +62,7 @@ const Faq = () => {
     <div className="w-full bg-gray-50 bg-cover" style={{ backgroundImage: `url("/images/faq2.avif")` }}>
       {/* :TITLE & IMAGE */}
       <div className="my-8 mx-auto max-w-4xl flex flex-col items-center">
-        <img src="src/images/faq2.avif" alt="Frequently Asked Questions" className="w-full h-full" />
+        <img src="src/images/faq.png" alt="Frequently Asked Questions" className="w-full h-full" />
         <h2 className="text-center text-2xl sm:text-4xl text-teal-600 tracking-widest">Preguntas frecuentes</h2>
       </div>
 
