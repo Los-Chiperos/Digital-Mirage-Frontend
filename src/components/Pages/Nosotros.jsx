@@ -91,7 +91,8 @@ const teamMembers = [
 
 function ProfileCard({ member }) {
     return (
-      <div className="card bg-amber-100 rounded-lg p-4 text-center w-64 h-85 mx-4">
+      <div  className="card bg-amber-100 rounded-lg p-4 text-center w-64 h-85 mx-4">
+      
         <br />
         <img
           src={member.imgSrc}
@@ -132,11 +133,13 @@ function Nosotros() {
           <div className="container mx-auto py-8 bg-cover">
             <div className="container flex justify-center mx-auto pt-16">
               <div>
+              <br></br>
+             
                 <h1 className="xl:text-4xl text-3xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">
                   ¿Quiénes Somos?
                 </h1>
                 <p className="text-gray-500 text-lg text-center font-normal pb-3">
-                  {/* Tu texto aquí */}
+                Somos un equipo de estudiantes apasionados por la tecnología y comprometidos con la creación de soluciones innovadoras, buscando siempre nuevos desafíos y proyectos. Nuestro grupo está compuesto por desarrolladores en diferentes áreas, tales como desarrollo web, DevOps, desarrollo de base de datos relacionales y no relacionales.
                 </p>
                 <br />
                 <br />

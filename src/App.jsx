@@ -24,12 +24,12 @@ function App() {
         <div>
           <Header />
           {/* Condicional para mostrar o no el Banner en función de la ruta */}
-          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && <Banner />}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && <Banner />}
           <main>
             <Router />
-            </main>
+          </main>
           {/* Condicional para mostrar o no el Banner2 en función de la ruta */}
-          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && <Banner2 />}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && <Banner2 />}
           <Footer />
         </div>
       )}
