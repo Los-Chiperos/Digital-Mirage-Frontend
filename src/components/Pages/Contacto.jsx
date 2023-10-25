@@ -55,7 +55,7 @@ Nuestro equipo está aquí para ayudarlo.</p>
 
               <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Oficina</h2>
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Conoce nuestras oficinas</p>
-              <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
+              <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">Av libertador 4250 Oficina 5 - CABA</p>
             </div>
 
             <div>
