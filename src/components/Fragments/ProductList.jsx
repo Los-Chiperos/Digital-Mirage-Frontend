@@ -8,7 +8,7 @@ function ProductList({ products }) {
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Productos destacados</h2>
         <div className="flex justify-center flex-wrap gap-4">
 {products.map((product, idx) => (
-  <ProductCard key={idx} product={product} /> {/* Cambia 'products' a 'product' */}
+  <ProductCard key={idx} product={product} />
 )}
 
         </div>
