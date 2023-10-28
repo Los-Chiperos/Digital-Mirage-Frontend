@@ -9,28 +9,28 @@ import Router from './Router';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const location = useLocation(); // Obtener la ubicación actual de la ruta
+  const location = useLocation();
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // Oculta la pantalla de carga después de 1.5 segundos
+    }, 1500);
   }, []);
 
-  const shouldShowBanner = !['/faq', '/contacto', '/nosotros'].includes(location.pathname);
+  const shouldShowBanners = location.pathname === '/' || !['/faq', '/contacto', '/nosotros'].includes(location.pathname);
 
   return (
     <BrowserRouter>
       {isLoading ? (
-        <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
+        <LoadingScreen />
       ) : (
         <div>
           <Header />
-          {shouldShowBanner && <Banner />}
+          {shouldShowBanners && <Banner />}
           <main>
             <Router />
           </main>
-          {shouldShowBanner && <Banner2 />}
+          {shouldShowBanners && <Banner2 />}
           <Footer />
         </div>
       )}
@@ -39,3 +39,4 @@ function App() {
 }
 
 export default App;
+
