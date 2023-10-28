@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoadingScreen from './components/Fragments/LoadingScreen.jsx';
 import Header from './components/layout/Header.jsx';
 import Footer from './components/layout/Footer.jsx';
@@ -9,28 +9,27 @@ import Router from './Router';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const location = useLocation();
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1500); // Oculta la pantalla de carga después de 1.5 segundos
   }, []);
-
-  const shouldShowBanners = location.pathname === '/' || !['/faq', '/contacto', '/nosotros'].includes(location.pathname);
 
   return (
     <BrowserRouter>
       {isLoading ? (
-        <LoadingScreen />
+        <LoadingScreen /> // Muestra la pantalla de carga mientras isLoading sea true
       ) : (
         <div>
           <Header />
-          {shouldShowBanners && <Banner />}
+          {/* Condicional para mostrar o no el Banner en función de la ruta */}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && <Banner />}
           <main>
             <Router />
           </main>
-          {shouldShowBanners && <Banner2 />}
+          {/* Condicional para mostrar o no el Banner2 en función de la ruta */}
+          {window.location.pathname !== '/faq' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && <Banner2 />}
           <Footer />
         </div>
       )}
@@ -39,4 +38,3 @@ function App() {
 }
 
 export default App;
-
