@@ -8,6 +8,8 @@ import Servicios from "./components/Pages/Servicios";
 import Nosotros from "./components/Pages/Nosotros";
 import Faq from "./components/Pages/SubPages/Faq";
 import ProductDetail from "./components/Fragments/ProductDetail.jsx";
+import Checkout from "./components/Fragments/Checkout.jsx";
+
 
 const Router = () => {
     return (
@@ -21,6 +23,8 @@ const Router = () => {
                 <Route exact path="/nosotros" element={<Nosotros />} />
                 <Route exact path="/faq" element={<Faq />} />
                 <Route exact path="/productdetail" element={<ProductDetail />} />
+                <Route exact path="/checkout" element={<Checkout />} />
+
 
 
             </Routes>
