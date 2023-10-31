@@ -9,8 +9,7 @@ import Nosotros from "./components/Pages/Nosotros";
 import Faq from "./components/Pages/SubPages/Faq";
 import ProductDetail from "./components/Fragments/ProductDetail.jsx";
 import Checkout from "./components/Fragments/Checkout.jsx";
-import Wishlist from './components/Fragments/Wishlist.jsx';
-
+import WishList from "./components/Fragments/Wishlist.jsx";
 
 
 const Router = () => {
