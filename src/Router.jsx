@@ -9,6 +9,7 @@ import Nosotros from "./components/Pages/Nosotros";
 import Faq from "./components/Pages/SubPages/Faq";
 import ProductDetail from "./components/Fragments/ProductDetail.jsx";
 import Checkout from "./components/Fragments/Checkout.jsx";
+import WishList from "./components/Fragments/Wishlist.jsx";
 
 
 const Router = () => {
@@ -24,6 +25,7 @@ const Router = () => {
                 <Route exact path="/faq" element={<Faq />} />
                 <Route exact path="/productdetail" element={<ProductDetail />} />
                 <Route exact path="/checkout" element={<Checkout />} />
+                <Route exact path="/wishlist" element={<WishList />} />
 
 
 

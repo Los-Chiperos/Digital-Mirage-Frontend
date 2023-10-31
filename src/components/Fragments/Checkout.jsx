@@ -142,6 +142,17 @@ function checkout() {
                 </div>
               </label>
             </div>
+            <div className="relative">
+              <input className="peer hidden" id="radio_3" type="radio" name="radio" checked />
+              <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+              <label className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" htmlFor="radio_3">
+                <img className="w-14 object-contain" src="https://img.freepik.com/iconos-gratis/marcador-posicion_318-154768.jpg?w=2000" alt="" />
+                <div className="ml-5">
+                  <span className="mt-2 font-semibold">Retiro en la sucursal</span>
+                  <p className="text-slate-500 text-sm leading-6">Retirar dentro de las 48hs  | $0</p>
+                </div>
+              </label>
+            </div>
           </form>
         </div>
 
