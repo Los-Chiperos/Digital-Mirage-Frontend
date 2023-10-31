@@ -25,7 +25,7 @@ const Router = () => {
                 <Route exact path="/faq" element={<Faq />} />
                 <Route exact path="/productdetail" element={<ProductDetail />} />
                 <Route exact path="/checkout" element={<Checkout />} />
-                <Route exact path="/wishlist" element={<Wishlist />} />
+                <Route exact path="/wishlist" element={<WishList />} />
 
 
 
