@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-const Contacto = () => {
-  return (
-    <div>
-      <h1>Contacto</h1>
-    </div>
-  )
-}
-
-export default Contacto;
-=======
 import React from 'react';
 
 
@@ -134,4 +121,3 @@ Nuestro equipo está aquí para ayudarlo.</p>
   );
 };
 export default Contacto;
->>>>>>> 4e4f8973a8cf21cfd2b0a1e6def6d60b4464cc4b
