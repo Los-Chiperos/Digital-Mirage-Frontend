@@ -41,6 +41,23 @@ const Registro = () => {
                         <form action='' method='POST'>
 
                             <div className="field">
+                                <label className="label">Usuario</label>
+                                <div className="control">
+                                    <input className="input is-success" type="text" placeholder="Tu nombre de usuario" />
+                                </div>
+                            </div>
+
+                            <div className="field">
+                                <label className='label'>Constraseña</label>
+                                <div className="control">
+                                    <input className="input is-success" type="password" placeholder="Contraseña" />
+                                </div>
+                                {
+                                    //    <p className="help is-danger">This password is invalid</p>
+                                }
+                            </div>
+
+                            <div className="field">
                                 <label className="label">Nombre</label>
                                 <div className="control">
                                     <input className="input is-success" type="text" placeholder="Tu nombre" />
@@ -54,8 +71,6 @@ const Registro = () => {
                                 </div>
                             </div>
 
-
-
                             <div className="field">
                                 <label className="label">Email</label>
                                 <div className="control">
@@ -66,15 +81,6 @@ const Registro = () => {
                                 }
                             </div>
 
-                            <div className="field">
-                                <label className='label'>Constraseña</label>
-                                <div className="control">
-                                    <input className="input is-success" type="password" placeholder="Password" />
-                                </div>
-                                {
-                                    //    <p className="help is-danger">This password is invalid</p>
-                                }
-                            </div>
                         </form>
 
                     </section>
