@@ -11,7 +11,7 @@ function Inicio() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const endpoint = "https://back.digital-mirage.ar/products";
+    const endpoint = "https://back.digital-mirage.ar/productos";
 
     axios
       .get(endpoint)
