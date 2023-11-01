@@ -1,10 +1,8 @@
-import React, { useState, useNavigate } from 'react';
+import React, { useState } from 'react';
 import { validateUsuario, validateNombreApellido, validateContrasena, validateEmail } from './Validaciones';
 import axios from 'axios';
 
 const Registro = () => {
-    const navigate = useNavigate();
-
     // Estado para controlar la visibilidad de un modal
     const [isOpen, setIsOpen] = useState(false);
 
@@ -69,7 +67,7 @@ const Registro = () => {
                     } else {
                         alert("El formulario se envió correctamente");
                         // Navega a la página de inicio de sesión
-                        navigate("/user/login");
+                        setIsOpen(false);
                     }
                     console.log('Respuesta del servidor:', response.data);
                 })
