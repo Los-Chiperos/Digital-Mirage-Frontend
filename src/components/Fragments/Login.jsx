@@ -165,3 +165,50 @@ const Login = () => {
 }
 
 export default Login;
+
+/**
+                                    Documentación del componenete
+Importación de módulos y funciones:
+
+    El componente importa los módulos y funciones necesarios de React y otras bibliotecas, como useNavigate de React Router y axios para realizar solicitudes HTTP.
+
+Inicialización de estados:
+
+    Se inicializan los estados del componente utilizando el hook useState.
+    isOpen controla la visibilidad de un modal.
+    username almacena el valor del campo de email.
+    isValidEmail se usa para verificar si el email es válido.
+    password almacena el valor del campo de contraseña.
+    isValidPassword se usa para verificar si la contraseña cumple con ciertas condiciones.
+
+Función de validación de email:
+
+    validateEmail es una función que toma un email como argumento y verifica si cumple con un formato válido utilizando una expresión regular.
+
+Manejo del cambio en el campo de email:
+
+    handleChangeEmail es una función que se ejecuta cuando el usuario cambia el valor del campo de email.
+    Actualiza el estado username con el valor del campo de email.
+    Llama a validateEmail para verificar si el email es válido y actualiza el estado isValidEmail en consecuencia.
+
+Función de validación de contraseña:
+
+    validatePassword es una función que toma una contraseña como argumento y verifica si cumple con ciertas condiciones, como longitud mínima y presencia de letras mayúsculas, minúsculas y números.
+    Manejo del cambio en el campo de contraseña:
+
+    handleChangePassword es una función que se ejecuta cuando el usuario cambia el valor del campo de contraseña.
+    Actualiza el estado password con el valor del campo de contraseña.
+    Llama a validatePassword para verificar si la contraseña es válida y actualiza el estado isValidPassword en consecuencia.
+    Funciones para abrir y cerrar el modal:
+
+    openModal y closeModal se utilizan para controlar la visibilidad del modal. isOpen se actualiza en consecuencia.
+
+Manejo del envío del formulario de inicio de sesión:
+
+    handleSubmit es una función que se ejecuta cuando se envía el formulario de inicio de sesión.
+    Previene el comportamiento predeterminado de envío del formulario.
+    Verifica si tanto el email como la contraseña son válidos (isValidEmail y isValidPassword).
+    Si son válidos, utiliza axios para realizar una solicitud POST al servidor con los datos de inicio de sesión (email y contraseña).
+    Si la solicitud es exitosa, muestra la respuesta en la consola y navega al destino correspondiente.
+    Si la solicitud falla, muestra un mensaje de error en la consola.
+ */
