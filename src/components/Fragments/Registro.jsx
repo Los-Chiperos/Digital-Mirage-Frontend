@@ -226,3 +226,48 @@ const Registro = () => {
 }
 
 export default Registro;
+
+
+/*
+                                        Documentación del componente
+
+Importación de módulos y funciones:
+
+    El código comienza importando varios módulos y funciones necesarios, como React, useState, useNavigate, funciones de validación desde un módulo llamado Validaciones, y el módulo axios para realizar solicitudes HTTP.
+
+Declaración de variables de estado:
+
+    navigate se utiliza para la navegación en la aplicación.
+    isOpen es un estado que controla la visibilidad de un modal.
+    formData es un estado que almacena los datos del formulario, como usuario, contraseña, nombre, apellido y email.
+    errors es un estado que almacena los mensajes de error relacionados con la validación de los campos del formulario.
+
+Función handleInputChange:
+
+    Esta función se encarga de manejar los cambios en los campos del formulario. Realiza lo siguiente:
+
+    Extrae el nombre y el valor del campo que se está modificando.
+    Realiza validación en función del nombre del campo utilizando las funciones de validación importadas.
+    Actualiza el estado formData con los nuevos valores.
+    Actualiza el estado errors con los mensajes de error resultantes de la validación.
+
+Función handleSubmit:
+
+    Esta función maneja el envío del formulario. Realiza lo siguiente:
+
+    Previene el comportamiento predeterminado de envío del formulario.
+    Verifica si formData no está vacío.
+    Si no está vacío, realiza una solicitud POST a una URL con los datos del formulario utilizando axios.
+    Maneja la respuesta del servidor y muestra alertas según el resultado.
+    Si formData está vacío, muestra un mensaje de alerta indicando que el formulario debe llenarse.
+    Funciones openModal y closeModal:
+
+    Estas funciones controlan la apertura y el cierre de un modal. isOpen se utiliza para mostrar u ocultar el modal.
+
+Función cleanForm:
+
+    Esta función se utiliza para restablecer el formulario a su estado inicial, eliminando los datos ingresados y los mensajes de error. Realiza lo siguiente:
+
+    Restablece el estado formData a valores vacíos.
+    Restablece el estado errors a mensajes de error vacíos.
+*/
