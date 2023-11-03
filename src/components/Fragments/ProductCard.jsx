@@ -44,10 +44,15 @@ function ProductCard({ _id, modelo, marca, descripcion, precio, url_image }) {
 
   const quantityPerItem = getQuantityById(_id);
 
+  const imgEstilo = {
+    width: '25rem', 
+    height: '19rem'
+  };
+
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
-        <img className="p-8 rounded-t-lg" src={url_image} alt="product image" />
+        <img className="p-8 rounded-t-lg" src={url_image} alt="product image" style={imgEstilo}/>
       </a>
       <div className="px-5 pb-5">
         <a href="#">
@@ -55,7 +60,8 @@ function ProductCard({ _id, modelo, marca, descripcion, precio, url_image }) {
             {modelo}
           </h5>
         </a>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{marca}</p>
+        <p className="is-size-6 text-gray-500 dark:text-gray-400 mb-2">{marca}</p>
+        <p className="is-size-7 text-gray-500 dark:text-gray-400 mb-2">{descripcion}</p>
         <div className="flex items-center mt-2.5 mb-5">
           <div>
             {[1, 2, 3, 4, 5].map((star) => (
