@@ -17,7 +17,7 @@ function ProductCard({ _id, modelo, marca, descripcion, precio, url_image }) {
           }
         });
       } else {
-        return [...currItems, { _id, modelo, marca, descripcion, quantity: 1, precio }];
+        return [...currItems, { _id, modelo, marca, descripcion, url_image, quantity: 1, precio }];
       }
     });
   };

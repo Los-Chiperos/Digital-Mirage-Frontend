@@ -1,8 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../Context/ShoppingCartContext";
 
 function checkout() {
+  const [cart, setCart] = useContext(CartContext);
+
+  const totalPrice = cart.reduce((acc, curr) => {
+    return acc + curr.quantity * curr.precio;
+  }, 0);
+
+  const removeItem = (id) => {
+    setCart((currItems) => {
+      if (currItems.find((item) => item._id === id)?.quantity === 1) {
+        return currItems.filter((item) => item._id !== id);
+      } else {
+        return currItems.map((item) => {
+          if (item._id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  }
+
   return (
-    <div>
+    <div className="mb-5">
       <br></br>
       <br></br>
       {/* Header Section */}
@@ -87,20 +110,45 @@ function checkout() {
           {/* Product Cards */}
           <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
             {/* Product 1 */}
-            <div className="flex flex-col rounded-lg bg-white sm:flex-row">
+            {
+              cart.map(producto => {
+                return (
+                  <>
+                    <div className="flex flex-col rounded-lg bg-white sm:flex-row">
+                      <img
+                        className="m-2 h-24 w-28 rounded-md border object-cover object-center"
+                        src={producto.url_image}
+                        alt={`imagen del producto ${producto.marca} ${producto.modelo}`} />
+                      <div className="flex w-full flex-col px-4 py-4">
+                        <span className="font-semibold">{producto.marca} {producto.modelo}</span>
+                        <p className="text-lg font-bold">{producto.precio}</p>
+                        <button
+                          className="is-flex is-flex-direction-row is-justify-content-flex-end"
+                          onClick={() => removeItem(producto._id)}>❌</button>
+                      </div>
+                    </div>
+                  </>
+                )
+              })
+            }
+
+            {/**
               <img
-                className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                src="https://www.lg.com/ar/images/televisores/md07540656/gallery/Z-01.jpg"
-                alt=""
-              />
-              <div className="flex w-full flex-col px-4 py-4">
-                <span className="font-semibold">LG UHD LED AI ThinQ 4K 65'</span>
-                <p className="text-lg font-bold">$699.999</p>
-              </div>
+              className="m-2 h-24 w-28 rounded-md border object-cover object-center"
+              src="https://www.lg.com/ar/images/televisores/md07540656/gallery/Z-01.jpg"
+              alt=""
+            />
+            <div className="flex w-full flex-col px-4 py-4">
+              <span className="font-semibold">LG UHD LED AI ThinQ 4K 65'</span>
+              <p className="text-lg font-bold">$699.999</p>
             </div>
+          </div>
+             */}
+
 
             {/* Product 2 */}
-            <div className="flex flex-col rounded-lg bg-white sm:flex-row">
+            {/**
+             * <div className="flex flex-col rounded-lg bg-white sm:flex-row">
               <img
                 className="m-2 h-24 w-28 rounded-md border object-cover object-center"
                 src="https://http2.mlstatic.com/D_NQ_NP_825955-MLU71687252597_092023-V.webp"
@@ -111,6 +159,10 @@ function checkout() {
                 <p className="mt-auto text-lg font-bold">$139.999</p>
               </div>
             </div>
+          </div>
+
+             */}
+
           </div>
 
           <p className="mt-8 text-lg font-medium">Métodos de Envios</p>
@@ -180,7 +232,7 @@ function checkout() {
             <div className="mt-6 border-t border-b py-2">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium text-gray-900">Subtotal</p>
-                <p className="font-semibold text-gray-900">$839.998</p>
+                <p className="font-semibold text-gray-900">$ {totalPrice}</p>
               </div>
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium text-gray-900">Envio</p>
@@ -189,7 +241,7 @@ function checkout() {
             </div>
             <div className="mt-6 flex items-center justify-between">
               <p className="text-sm font-medium text-gray-900">Total</p>
-              <p className="text-2xl font-semibold text-gray-900">$843.498</p>
+              <p className="text-2xl font-semibold text-gray-900">$ {totalPrice + 3500}</p>
             </div>
           </div>
 
@@ -199,7 +251,7 @@ function checkout() {
 
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
