@@ -13,7 +13,7 @@ const Registro = () => {
         nombre: '',
         apellido: '',
         email: '',
-        rol: ''
+        rol: 'client'
     });
 
     // Estado para gestionar mensajes de error
@@ -107,8 +107,7 @@ const Registro = () => {
             contrasena: '',
             nombre: '',
             apellido: '',
-            email: '',
-            rol: ''
+            email: ''
         });
 
         setErrors({
@@ -203,7 +202,7 @@ const Registro = () => {
                                 <div className="control">
                                     <input
                                         name="email"
-                                        value={formData.emaiol}
+                                        value={formData.email}
                                         onChange={handleInputChange}
                                         className={`input ${errors.email ? 'is-danger' : 'is-success'}`}
                                         type="text"
