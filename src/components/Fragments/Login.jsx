@@ -3,45 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-    // Obtiene la función de navegación para redirigir al usuario.
     const navigate = useNavigate();
 
-    // Estado para controlar la visibilidad de un modal.
     const [isOpen, setIsOpen] = useState(false);
-
-    // Estado para almacenar el nombre de usuario (email) y validar su formato.
-    const [username, setEmail] = useState('');
-    const [isValidEmail, setIsValidEmail] = useState(true);
-
-    // Estado para almacenar la contraseña y validar su complejidad.
+    const [username, setUsername] = useState(''); // Cambiar "email" a "username"
     const [password, setPassword] = useState('');
     const [isValidPassword, setIsValidPassword] = useState(true);
 
-    /**
-     * Valida si el email cumple con un formato válido.
-     * @param {string} username - El valor del campo de email a validar.
-     * @returns {boolean} - True si el email es válido, de lo contrario, false.
-     */
-    const validateEmail = (username) => {
-        const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-        return regex.test(username);
+    const handleChangeUsername = (ev) => {
+        const inputUsername = ev.target.value;
+        setUsername(inputUsername);
     };
 
-    /**
-     * Maneja el cambio en el campo de email.
-     * @param {Event} ev - El evento de cambio en el campo de email.
-     */
-    const handleChangeEmail = (ev) => {
-        const inputEmail = ev.target.value;
-        setEmail(inputEmail);
-        setIsValidEmail(validateEmail(inputEmail));
-    };
-
-    /**
-     * Valida la complejidad de la contraseña.
-     * @param {string} password - El valor del campo de contraseña a validar.
-     * @returns {boolean} - True si la contraseña es válida, de lo contrario, false.
-     */
     const validatePassword = (password) => {
         if (password.length < 8) {
             return false;
@@ -58,37 +31,23 @@ const Login = () => {
         return true;
     };
 
-    /**
-     * Maneja el cambio en el campo de contraseña.
-     * @param {Event} e - El evento de cambio en el campo de contraseña.
-     */
     const handleChangePassword = (e) => {
         const inputPassword = e.target.value;
         setPassword(inputPassword);
         setIsValidPassword(validatePassword(inputPassword));
     };
 
-    /**
-     * Abre un modal.
-     */
     const openModal = () => {
         setIsOpen(true);
     };
 
-    /**
-     * Cierra un modal.
-     */
     const closeModal = () => {
         setIsOpen(false);
     };
 
-    /**
-     * Maneja el envío del formulario de inicio de sesión.
-     * @param {Event} ev - El evento de envío del formulario.
-     */
     const handleSubmit = async (ev) => {
         ev.preventDefault();
-        if (isValidEmail && isValidPassword) {
+        if (isValidPassword) {
             try {
                 const response = await axios.post('https://back.digital-mirage.ar/user/login', { username, password });
                 console.log(`Respuesta del servidor: ${response.data}`);
@@ -120,16 +79,14 @@ const Login = () => {
                                     <input
                                         className="input"
                                         type="text"
-                                        placeholder="UserName"
-                                        name="email"
-                                        onChange={handleChangeEmail}
+                                        placeholder="Username" // Cambiar "UserName" a "Username"
+                                        name="username" // Cambiar "email" a "username"
+                                        onChange={handleChangeUsername}
                                         value={username}
                                     />
-                                    {isValidEmail ? null : (
-                                        <p style={{ color: 'red' }}>Email no válido</p>
-                                    )}
+                                    {/* Eliminar validación de email */}
                                     <span className="icon is-small is-left">
-                                        <i className="fas fa-envelope"></i>
+                                        <i className="fas fa-user"></i> {/* Cambiar icono */}
                                     </span>
                                 </p>
                             </div>
@@ -165,6 +122,7 @@ const Login = () => {
 }
 
 export default Login;
+
 
 /**
                                     Documentación del componenete
