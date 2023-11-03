@@ -119,8 +119,8 @@ const Login = () => {
                                 <p className="control has-icons-left">
                                     <input
                                         className="input"
-                                        type="email"
-                                        placeholder="Email"
+                                        type="text"
+                                        placeholder="UserName"
                                         name="email"
                                         onChange={handleChangeEmail}
                                         value={username}

@@ -13,6 +13,7 @@ const Registro = () => {
         nombre: '',
         apellido: '',
         email: '',
+        rol: ''
     });
 
     // Estado para gestionar mensajes de error
@@ -106,7 +107,8 @@ const Registro = () => {
             contrasena: '',
             nombre: '',
             apellido: '',
-            email: ''
+            email: '',
+            rol: ''
         });
 
         setErrors({
