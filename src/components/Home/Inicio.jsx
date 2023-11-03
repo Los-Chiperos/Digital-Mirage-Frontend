@@ -28,6 +28,7 @@ function Inicio() {
   }, [navigate]);
 
 console.log(products)
+
   return (
     <>
       <Buscador />

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 function checkout() {
   return (
     <div>
-    <br></br>
-    <br></br>
+      <br></br>
+      <br></br>
       {/* Header Section */}
       <br></br>
       <br></br>
@@ -58,7 +58,7 @@ function checkout() {
                   className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2"
                   href="#"
                 >
-                  
+
                 </a>
                 <span className="font-semibold text-gray-600">Finalizar</span>
               </li>
@@ -70,9 +70,7 @@ function checkout() {
                 stroke="currentColor"
                 strokeWidth="2"
               >
-               
               </svg>
-           
             </ul>
           </div>
         </div>
@@ -83,7 +81,7 @@ function checkout() {
         <div className="px-4 pt-8">
           <p className="text-xl font-medium">Resumen del pedido</p>
           <p className="text-gray-400">
-          Revisa tus artículos. Y seleccione un método de envío adecuado.
+            Revisa tus artículos. Y seleccione un método de envío adecuado.
           </p>
 
           {/* Product Cards */}
@@ -158,7 +156,7 @@ function checkout() {
 
         <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
           <p className="text-xl font-medium">Detalles del pago
-</p>
+          </p>
           <p className="text-gray-400">Complete su pedido proporcionando sus datos de pago.</p>
 
           {/* Payment Form */}
@@ -172,9 +170,9 @@ function checkout() {
                 className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
                 placeholder="tucorreo@gmail.com"
               />
-             
+
             </div>
-            
+
 
             {/* Other input fields go here... */}
 
