@@ -1,6 +1,13 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 
+function formatPrice(price) {
+  return price.toLocaleString("es-AR", {
+    style: "currency",
+    currency: "ARS"
+  });
+}
+
 function checkout() {
   const [cart, setCart] = useContext(CartContext);
 
@@ -109,60 +116,25 @@ function checkout() {
 
           {/* Product Cards */}
           <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-            {/* Product 1 */}
-            {
-              cart.map(producto => {
-                return (
-                  <>
-                    <div className="flex flex-col rounded-lg bg-white sm:flex-row">
-                      <img
-                        className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                        src={producto.url_image}
-                        alt={`imagen del producto ${producto.marca} ${producto.modelo}`} />
-                      <div className="flex w-full flex-col px-4 py-4">
-                        <span className="font-semibold">{producto.marca} {producto.modelo}</span>
-                        <p className="text-lg font-bold">{producto.precio}</p>
-                        <button
-                          className="is-flex is-flex-direction-row is-justify-content-flex-end"
-                          onClick={() => removeItem(producto._id)}>❌</button>
-                      </div>
+            {cart.map(producto => {
+              return (
+                <>
+                  <div className="flex flex-col rounded-lg bg-white sm:flex-row">
+                    <img
+                      className="m-2 h-24 w-28 rounded-md border object-cover object-center"
+                      src={producto.url_image}
+                      alt={`imagen del producto ${producto.marca} ${producto.modelo}`} />
+                    <div className="flex w-full flex-col px-4 py-4">
+                      <span className="font-semibold">{producto.marca} {producto.modelo}</span>
+                      <p className="text-lg font-bold">{formatPrice(producto.precio)}</p>
+                      <button
+                        className="is-flex is-flex-direction-row is-justify-content-flex-end"
+                        onClick={() => removeItem(producto._id)}>❌</button>
                     </div>
-                  </>
-                )
-              })
-            }
-
-            {/**
-              <img
-              className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-              src="https://www.lg.com/ar/images/televisores/md07540656/gallery/Z-01.jpg"
-              alt=""
-            />
-            <div className="flex w-full flex-col px-4 py-4">
-              <span className="font-semibold">LG UHD LED AI ThinQ 4K 65'</span>
-              <p className="text-lg font-bold">$699.999</p>
-            </div>
-          </div>
-             */}
-
-
-            {/* Product 2 */}
-            {/**
-             * <div className="flex flex-col rounded-lg bg-white sm:flex-row">
-              <img
-                className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                src="https://http2.mlstatic.com/D_NQ_NP_825955-MLU71687252597_092023-V.webp"
-                alt=""
-              />
-              <div className="flex w-full flex-col px-4 py-4">
-                <span className="font-semibold">Moto G32</span>
-                <p className="mt-auto text-lg font-bold">$139.999</p>
-              </div>
-            </div>
-          </div>
-
-             */}
-
+                  </div>
+                </>
+              )
+            })}
           </div>
 
           <p className="mt-8 text-lg font-medium">Métodos de Envios</p>
@@ -182,7 +154,8 @@ function checkout() {
             </div>
 
             <div className="relative">
-              <input className="peer hidden" id="radio_2" type="radio" name="radio" checked />
+              <input className="peer hidden" id="radio_2" type
+              ="radio" name="radio" checked />
               <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
               <label className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" htmlFor="radio_2">
                 <img className="w-14 object-contain" src="http://www.cabb.org.ar/wp-content/uploads/2020/11/Andreani.png" alt="" />
@@ -199,7 +172,7 @@ function checkout() {
                 <img className="w-14 object-contain" src="https://img.freepik.com/iconos-gratis/marcador-posicion_318-154768.jpg?w=2000" alt="" />
                 <div className="ml-5">
                   <span className="mt-2 font-semibold">Retiro en la sucursal</span>
-                  <p className="text-slate-500 text-sm leading-6">Retirar dentro de las 48hs  | $0</p>
+                  <p className="text-slate-500 text-sm leading-6">Retirar dentro de las 48hs | $0</p>
                 </div>
               </label>
             </div>
@@ -207,8 +180,7 @@ function checkout() {
         </div>
 
         <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
-          <p className="text-xl font-medium">Detalles del pago
-          </p>
+          <p className="text-xl font-medium">Detalles del pago</p>
           <p className="text-gray-400">Complete su pedido proporcionando sus datos de pago.</p>
 
           {/* Payment Form */}
@@ -225,14 +197,13 @@ function checkout() {
 
             </div>
 
-
             {/* Other input fields go here... */}
 
             {/* Total Section */}
             <div className="mt-6 border-t border-b py-2">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium text-gray-900">Subtotal</p>
-                <p className="font-semibold text-gray-900">$ {totalPrice}</p>
+                <p className="font-semibold text-gray-900">$ {formatPrice(totalPrice)}</p>
               </div>
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium text-gray-900">Envio</p>
@@ -241,7 +212,7 @@ function checkout() {
             </div>
             <div className="mt-6 flex items-center justify-between">
               <p className="text-sm font-medium text-gray-900">Total</p>
-              <p className="text-2xl font-semibold text-gray-900">$ {totalPrice + 3500}</p>
+              <p className="text-2xl font-semibold text-gray-900">$ {formatPrice(totalPrice + 3500)}</p>
             </div>
           </div>
 
@@ -251,7 +222,7 @@ function checkout() {
 
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
