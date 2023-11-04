@@ -78,76 +78,74 @@ const Header = () => {
                             </svg>
                         </button>
                     </div>
-
-                    <div
-                        className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-                            menuOpen ? 'block' : 'hidden'
-                        }`}
-                        id="navbar-sticky"
-                    >
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white dark:bg-gray-800 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 dark:border-gray-700">
-
-                            <li>
-                                <Link
-                                    to="/"
-                                    className={`block py-2 pl-3 pr-4 ${
-                                        darkMode ? 'text-blue-500 dark:text-white' : 'text-white'
-                                    } ${
-                                        darkMode
-                                            ? 'bg-gray-700 dark:bg-gray-800'
-                                            : 'bg-blue-700'
-                                    } rounded md:bg-transparent md:text-blue-700 md:p-0`}
-                                    aria-current="page"
-                                >
-                                    Inicio
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/acercade"
-                                    className={`block py-2 pl-3 pr-4 ${
-                                        darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'
-                                    } ${
-                                        darkMode
-                                            ? 'hover:bg-gray-800 dark:hover:bg-gray-700'
-                                            : 'hover:bg-gray-100'
-                                    } md:hover:bg-transparent md:hover:text-blue-700 md:p-0`}
-                                >
-                                    Nosotros
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/servicios"
-                                    className={`block py-2 pl-3 pr-4 ${
-                                        darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'
-                                    } ${
-                                        darkMode
-                                            ? 'hover:bg-gray-800 dark:hover:bg-gray-700'
-                                            : 'hover:bg-gray-100'
-                                    } md:hover:text-blue-700 md:p-0`}
-                                >
-                                    Servicios
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/contacto"
-                                    className={`block py-2 pl-3 pr-4 ${
-                                        darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'
-                                    } ${
-                                        darkMode
-                                            ? 'hover-bg-gray-800 dark:hover-bg-gray-700'
-                                            : 'hover-bg-gray-100'
-                                    } md:hover-text-blue-700 md:p-0`}
-                                >
-                                    Contacto
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
+            <div
+                className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
+                    menuOpen ? 'block' : 'hidden'
+                }`}
+                id="navbar-sticky"
+            >
+                <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white dark:bg-gray-800 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 dark:border-gray-700">
+                    <li>
+                        <Link
+                            to="/"
+                            className={`block py-2 pl-3 pr-4 ${
+                                darkMode ? 'text-blue-500 dark:text-white' : 'text-white'
+                            } ${
+                                darkMode
+                                    ? 'bg-gray-700 dark:bg-gray-800'
+                                    : 'bg-blue-700'
+                            } rounded md:bg-transparent md:text-blue-700 md:p-0`}
+                            aria-current="page"
+                        >
+                            Inicio
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/acercade"
+                            className={`block py-2 pl-3 pr-4 ${
+                                darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'
+                            } ${
+                                darkMode
+                                    ? 'hover:bg-gray-800 dark:hover:bg-gray-700'
+                                    : 'hover:bg-gray-100'
+                            } md:hover:bg-transparent md:hover:text-blue-700 md:p-0`}
+                        >
+                            Nosotros
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/servicios"
+                            className={`block py-2 pl-3 pr-4 ${
+                                darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'
+                            } ${
+                                darkMode
+                                    ? 'hover:bg-gray-800 dark:hover:bg-gray-700'
+                                    : 'hover:bg-gray-100'
+                            } md:hover:text-blue-700 md:p-0`}
+                        >
+                            Servicios
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/contacto"
+                            className={`block py-2 pl-3 pr-4 ${
+                                darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'
+                            } ${
+                                darkMode
+                                    ? 'hover-bg-gray-800 dark:hover-bg-gray-700'
+                                    : 'hover-bg-gray-100'
+                            } md:hover-text-blue-700 md:p-0`}
+                        >
+                            Contacto
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 };
