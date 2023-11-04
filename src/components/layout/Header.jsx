@@ -20,30 +20,33 @@ const Header = () => {
     return (
         <div>
             <nav className={`bg-white ${darkMode ? 'dark:bg-gray-900' : 'dark:bg-gray-50'} fixed w-full z-20 top-0 left-0 border-b ${darkMode ? 'dark:border-gray-600' : 'border-gray-200'}`}>
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <Link to="http://digital-mirage.ar/" className="flex items-center">
-                        <img
-                            src="https://i.postimg.cc/jdZqGQx2/logo-ecommerce-removebg-preview.png"
-                            className="h-12"
-                            alt="Digital Mirage Logo"
-                        />
-                    </Link>
+                <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+                    <div className="flex items-center">
+                        <Link to="http://digital-mirage.ar/" className="mr-4">
+                            <img
+                                src="https://i.postimg.cc/jdZqGQx2/logo-ecommerce-removebg-preview.png"
+                                className="h-12"
+                                alt="Digital Mirage Logo"
+                            />
+                        </Link>
 
-                    {/* Agregar el interruptor de modo oscuro aquí */}
-                    <Switch
-                        checked={darkMode}
-                        onChange={toggleDarkMode}
-                        className={`${
-                            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                        } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700`}
-                    >
-                        <span className="sr-only">Modo oscuro</span>
-                        <span
-                            className={`${
-                                darkMode ? 'translate-x-6' : 'translate-x-1'
-                            } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
-                        />
-                    </Switch>
+                        <div className="flex items-center">
+                            <Switch
+                                checked={darkMode}
+                                onChange={toggleDarkMode}
+                                className={`${
+                                    darkMode ? 'bg-gray-700' : 'bg-gray-200'
+                                } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700`}
+                            >
+                                <span className="sr-only">Modo oscuro</span>
+                                <span
+                                    className={`${
+                                        darkMode ? 'translate-x-6' : 'translate-x-1'
+                                    } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
+                                />
+                            </Switch>
+                        </div>
+                    </div>
 
                     <div className="flex md:order-2">
                         <Login />
