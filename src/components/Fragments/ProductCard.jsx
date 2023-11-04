@@ -77,7 +77,7 @@ function ProductCard({ _id, modelo, marca, descripcion, precio, url_image, onPro
                 <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'} mb-2`}>{marca}</p>
                 <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'} mb-2`}>{descripcion}</p>
                 <div className="mt-2.5 mb-5">
-                    <span className={`text-3xl font-bold ${darkMode ? 'text-gray-900' : 'dark:text-white'}`}>
+                    <span className={`text-3xl font-bold ${darkMode ? 'text-gray-900' : 'dark:text-cyan-600'}`}>
                         {formatPrice(precio)}
                     </span>
                     <div className="mt-2">
