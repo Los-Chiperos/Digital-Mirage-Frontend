@@ -14,6 +14,21 @@ function CartButton() {
         });
     }
 
+    // Función para actualizar la cantidad de un producto en el carrito
+    const updateQuantity = (productId, newQuantity) => {
+        const updatedCart = cart.map(product => {
+            if (product._id === productId) {
+                return { ...product, quantity: newQuantity };
+            }
+            return product;
+        });
+        setCart(updatedCart);
+    };
+
+    const quantity = cart.reduce((acc, curr) => {
+        return acc + curr.quantity;
+    }, 0);
+
     const totalPrice = cart.reduce((acc, curr) => {
         return acc + curr.quantity * curr.precio;
     }, 0);
@@ -42,29 +57,16 @@ function CartButton() {
         setIsOpen(false);
     };
 
-    // Función para manejar el cambio de cantidad de un producto
-    const handleQuantityChange = (id, quantity) => {
-        setCart((currItems) => {
-            return currItems.map((item) => {
-                if (item._id === id) {
-                    return { ...item, quantity };
-                } else {
-                    return item;
-                }
-            });
-        });
-    }
-
     return (
         <>
             <button onClick={openModal}>
                 <div className="cart-btn" id="cart-btn">🛒</div>
-                <span className="cart-counter" id="cart-counter">{cart.length}</span>
+                <span className="cart-counter" id="cart-counter">{quantity}</span>
             </button>
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>
-                <div className="modal-background"></div>
-                <div className="modal-card">
+  <div className="modal-background"></div>
+  <div className="modal-card" style={{ maxWidth: '80%', width: 'auto' }}> {/* Estilos para el ancho */}
                     <header className="modal-card-head">
                         <p className="modal-card-title has-text-primary">Productos en el carrito</p>
                         <button onClick={closeModal} className="delete" aria-label="close"></button>
@@ -99,8 +101,12 @@ function CartButton() {
                                             <input
                                                 type="number"
                                                 value={producto.quantity}
-                                                onChange={(e) => handleQuantityChange(producto._id, parseInt(e.target.value))}
-                                                min="1"
+                                                onChange={(e) => {
+                                                    const newQuantity = parseInt(e.target.value, 10);
+                                                    if (!isNaN(newQuantity) && newQuantity >= 1) {
+                                                        updateQuantity(producto._id, newQuantity);
+                                                    }
+                                                }}
                                             />
                                         </td>
                                         <td className='has-text-primary'>{formatPrice(producto.precio)}</td>
@@ -121,4 +127,3 @@ function CartButton() {
 }
 
 export default CartButton;
-
