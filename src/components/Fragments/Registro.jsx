@@ -123,7 +123,7 @@ const Registro = () => {
         <>
             <button
                 type="button"
-                className="button bg-blue-700 text-white hover:bg-blue-500 hover:text-white  hover:sm-text-white mr-2 text-sm md:text-base"
+                className="button bg-blue-700 border-blue-500 text-white hover:bg-blue-500 hover:text-white  hover:sm-text-white mr-2 text-sm md:text-base"
                 onClick={openModal}
             >
                 Comenzar

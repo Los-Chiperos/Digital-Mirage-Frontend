@@ -86,12 +86,12 @@ const Header = () => {
                             <li>
                                 <Link
                                     to="/"
-                                    className={`block py-2 pl-3 pr-4 ${
+                                    className={`block py-2 pl-3 pr-4  hover:text-blue-500 ${
                                         darkMode ? 'text-blue-500 dark:md:text-white' : 'text-white'
                                     } ${
                                         darkMode
                                             ? 'bg-gray-700 dark:md:bg-gray-800'
-                                            : 'bg-blue-700'
+                                            : 'bg-gray-800'
                                     } rounded md:bg-transparent md:text-blue-700 md:p-0`}
                                     aria-current="page"
                                 >
@@ -101,12 +101,12 @@ const Header = () => {
                             <li>
                             <Link
                                     to="/nosotros"
-                                    className={`block py-2 pl-3 pr-4 ${
+                                    className={`block hover:text-blue-500 py-2 pl-3 pr-4 ${
                                         darkMode ? 'text-blue-500 dark:md:text-white' : 'text-white'
                                     } ${
                                         darkMode
-                                            ? 'bg-gray-700 dark:bg-gray-800'
-                                            : 'bg-blue-700'
+                                            ? 'bg-white dark:bg-gray-800'
+                                            : 'bg-gray-800'
                                     } rounded md:bg-transparent md:text-blue-700 md:p-0`}
                                     aria-current="page"
                                 >
@@ -116,12 +116,12 @@ const Header = () => {
                             <li>
                             <Link
                                     to="/faq"
-                                    className={`block py-2 pl-3 pr-4 ${
+                                    className={`block py-2 pl-3 pr-4  hover:text-blue-500 ${
                                         darkMode ? 'text-blue-500 dark:md:text-white' : 'text-white'
                                     } ${
                                         darkMode
-                                            ? 'bg-gray-700 dark:bg-gray-800'
-                                            : 'bg-blue-700'
+                                            ? 'bg-white dark:bg-gray-800'
+                                            : 'bg-gray-800'
                                     } rounded md:bg-transparent md:text-blue-700 md:p-0`}
                                     aria-current="page"
                                 >
@@ -131,7 +131,7 @@ const Header = () => {
                             <li>
                             <Link
                                     to="/contacto"
-                                    className={`block py-2 pl-3 pr-4 ${
+                                    className={`block py-2 pl-3 pr-4  hover:text-blue-500 ${
                                         darkMode ? 'text-blue-500 dark:md:text-white' : 'text-white'
                                     } ${
                                         darkMode
