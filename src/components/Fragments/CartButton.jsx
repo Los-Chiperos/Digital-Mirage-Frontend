@@ -64,7 +64,7 @@ function CartButton() {
                         <table className='table'>
                             <thead>
                                 <tr>
-                                    <th className='has-text-info'>Código</th>
+                                    <th className='has-text-info'>Imagen</th>
                                     <th className='has-text-info'>Marca</th>
                                     <th className='has-text-info'>Modelo</th>
                                     <th className='has-text-info'>Descripcion</th>
@@ -74,23 +74,23 @@ function CartButton() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {
-                                    cart.map(producto => {
-                                        return (
-                                            <>
-                                                <tr>
-                                                    <th>{producto._id}</th>
-                                                    <th>{producto.marca}</th>
-                                                    <th>{producto.modelo}</th>
-                                                    <th>{producto.descripcion}</th>
-                                                    <th>{quantity}</th>
-                                                    <th className='has-text-primary'>{formatPrice(producto.precio)}</th>
-                                                    <th><button onClick={() => removeItem(producto._id)}>❌</button></th>
-                                                </tr>
-                                            </>
-                                        )
-                                    })
-                                }
+                                {cart.map(producto => (
+                                    <tr>
+                                        <td>
+                                            <img
+                                                className="m-2 h-24 w-28 rounded-md border object-cover object-center"
+                                                src={producto.url_image}
+                                                alt={`imagen del producto ${producto.marca} ${producto.modelo}`}
+                                            />
+                                        </td>
+                                        <td>{producto.marca}</td>
+                                        <td>{producto.modelo}</td>
+                                        <td>{producto.descripcion}</td>
+                                        <td>{quantity}</td>
+                                        <td className='has-text-primary'>{formatPrice(producto.precio)}</td>
+                                        <td><button onClick={() => removeItem(producto._id)}>❌</button></td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </section>
