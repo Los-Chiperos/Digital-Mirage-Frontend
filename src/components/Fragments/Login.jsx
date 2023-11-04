@@ -60,9 +60,12 @@ const Login = () => {
 
     return (
         <>
-            <button onClick={openModal} className='button is-success mr-3'>
-                Ingresar
-            </button>
+            <button
+    onClick={openModal}
+    className='button is-success hover:bg-esmerald-100 mr-2 text-sm md:text-base'
+>
+    Ingresar
+</button>
             <hr />
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>
