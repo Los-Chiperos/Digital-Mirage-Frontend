@@ -14,10 +14,6 @@ function CartButton() {
         });
     }
 
-    const quantity = cart.reduce((acc, curr) => {
-        return acc + curr.quantity;
-    }, 0);
-
     const totalPrice = cart.reduce((acc, curr) => {
         return acc + curr.quantity * curr.precio;
     }, 0);
@@ -46,11 +42,24 @@ function CartButton() {
         setIsOpen(false);
     };
 
+    // Función para manejar el cambio de cantidad de un producto
+    const handleQuantityChange = (id, quantity) => {
+        setCart((currItems) => {
+            return currItems.map((item) => {
+                if (item._id === id) {
+                    return { ...item, quantity };
+                } else {
+                    return item;
+                }
+            });
+        });
+    }
+
     return (
         <>
             <button onClick={openModal}>
                 <div className="cart-btn" id="cart-btn">🛒</div>
-                <span className="cart-counter" id="cart-counter">{quantity}</span>
+                <span className="cart-counter" id="cart-counter">{cart.length}</span>
             </button>
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>
@@ -75,7 +84,7 @@ function CartButton() {
                             </thead>
                             <tbody>
                                 {cart.map(producto => (
-                                    <tr>
+                                    <tr key={producto._id}>
                                         <td>
                                             <img
                                                 className="m-2 h-24 w-28 rounded-md border object-cover object-center"
@@ -86,7 +95,14 @@ function CartButton() {
                                         <td>{producto.marca}</td>
                                         <td>{producto.modelo}</td>
                                         <td>{producto.descripcion}</td>
-                                        <td>{quantity}</td>
+                                        <td>
+                                            <input
+                                                type="number"
+                                                value={producto.quantity}
+                                                onChange={(e) => handleQuantityChange(producto._id, parseInt(e.target.value))}
+                                                min="1"
+                                            />
+                                        </td>
                                         <td className='has-text-primary'>{formatPrice(producto.precio)}</td>
                                         <td><button onClick={() => removeItem(producto._id)}>❌</button></td>
                                     </tr>
