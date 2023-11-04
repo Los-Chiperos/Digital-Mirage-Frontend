@@ -4,9 +4,12 @@ import { CartContext } from "../Context/ShoppingCartContext";
 function ProductCard({ _id, modelo, marca, descripcion, precio, url_image, onProductClick }) {
   const [cart, setCart] = useContext(CartContext);
 
+  // Genera una valoración aleatoria en el rango de 2.5 a 5
   const randomRating = (Math.random() * (5 - 2.5) + 2.5).toFixed(1);
+  // Redondea la valoración a la cantidad de estrellas enteras
   const rating = Math.round(randomRating);
 
+  // Función para determinar el color de la estrella (dorada o gris)
   const starColor = (starIndex) => {
     return starIndex <= rating ? 'text-yellow-300' : 'text-gray-200 dark:text-gray-600';
   };
@@ -119,3 +122,5 @@ function ProductCard({ _id, modelo, marca, descripcion, precio, url_image, onPro
 }
 
 export default ProductCard;
+
+
