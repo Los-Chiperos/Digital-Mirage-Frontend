@@ -6,7 +6,7 @@ import { Switch } from '@headlessui/react';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -24,7 +24,7 @@ const Header = () => {
                     <Link to="http://digital-mirage.ar/" className="flex items-center">
                         <img
                             src="https://i.postimg.cc/jdZqGQx2/logo-ecommerce-removebg-preview.png"
-                            className="h-12 "
+                            className="h-12"
                             alt="Digital Mirage Logo"
                         />
                     </Link>
@@ -34,28 +34,28 @@ const Header = () => {
                         checked={darkMode}
                         onChange={toggleDarkMode}
                         className={`${
-                            darkMode ? 'bg-gray-700' : 'bg-gray-200'
-                        } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700`}
+                            darkMode ? 'bg-gray-200' : 'bg-gray-700'
+                        } relative inline-flex items-center h-5 w-10 rounded-full ml-2 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700`}
                     >
                         <span className="sr-only">Modo oscuro</span>
                         <span
                             className={`${
-                                darkMode ? 'translate-x-6' : 'translate-x-1'
-                            } inline-block w-4 h-4 transform bg-white rounded-full transition-transform`}
+                                darkMode ? 'translate-x-1' : 'translate-x-4'
+                            } inline-block w-3 h-3 transform bg-white rounded-full transition-transform`}
                         />
                     </Switch>
 
-                    <div className="flex md:order-2">
-                        <Login />
-                        <Registro />
+                    <div className="flex md:order-2 items-center">
+                        <Login className="hidden md:inline" />
+                        <Registro className="hidden md:inline" />
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            className="inline-flex items-center p-2 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         >
                             <span className="sr-only">Abrir menú principal</span>
                             <svg
-                                className="w-5 h-5"
+                                className="w-4 h-4"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -76,42 +76,41 @@ const Header = () => {
                         className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${menuOpen ? 'block' : 'hidden'}`}
                         id="navbar-sticky"
                     >
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul className={`flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-red-100'} md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700`}>
                         <li>
-    <Link
-        to="/"
-        className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-white'} ${darkMode ? 'bg-gray-700 dark:bg-gray-800' : 'bg-blue-700'} rounded md:bg-transparent md:text-blue-700 md:p-0`}
-        aria-current="page"
-    >
-        Inicio
-    </Link>
-</li>
-<li>
-    <Link
-        to="/acercade"
-        className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'} ${darkMode ? 'hover:bg-gray-800 dark:hover:bg-gray-700' : 'hover:bg-gray-100'} md:hover:bg-transparent md:hover:text-blue-700 md:p-0`}
-    >
-        Nosotros
-    </Link>
-</li>
-<li>
-    <Link
-        to="/servicios"
-        className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'} ${darkMode ? 'hover:bg-gray-800 dark:hover:bg-gray-700' : 'hover:bg-gray-100'} md:hover:text-blue-700 md:p-0`}
-    >
-        Servicios
-    </Link>
-</li>
-<li>
-    <Link
-        to="/contacto"
-        className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'} ${darkMode ? 'hover:bg-gray-800 dark:hover:bg-gray-700' : 'hover:bg-gray-100'} md:hover:text-blue-700 md:p-0`}
-    >
-        Contacto
-    </Link>
-</li>
-
-                        </ul>
+                            <Link
+                                to="/"
+                                className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-white'} ${darkMode ? 'bg-gray-700 dark:bg-gray-800' : 'bg-blue-700'} rounded md:bg-transparent md:text-blue-700 md:p-0`}
+                                aria-current="page"
+                            >
+                                Inicio
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/acercade"
+                                className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'} ${darkMode ? 'hover:bg-gray-800 dark:hover-bg-gray-700' : 'hover:bg-gray-100'} md:hover-bg-transparent md:hover-text-blue-700 md:p-0`}
+                            >
+                                Nosotros
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/servicios"
+                                className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'} ${darkMode ? 'hover-bg-gray-800 dark:hover-bg-gray-700' : 'hover-bg-gray-100'} md:hover-text-blue-700 md:p-0`}
+                            >
+                                Servicios
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/contacto"
+                                className={`block py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:text-white' : 'text-gray-900'} ${darkMode ? 'hover-bg-gray-800 dark:hover-bg-gray-700' : 'hover-bg-gray-100'} md:hover-text-blue-700 md:p-0`}
+                            >
+                                Contacto
+                            </Link>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </nav>
