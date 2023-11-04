@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom';
 import "../Css/cart.css";
 import { CartContext } from '../Context/ShoppingCartContext';
 
-const CartButton = () => {
+function CartButton() {
     const [isOpen, setIsOpen] = useState(false);
     const [cart, setCart] = useContext(CartContext);
+
+    function formatPrice(price) {
+        return price.toLocaleString("es-AR", {
+            style: "currency",
+            currency: "ARS"
+        });
+    }
 
     const quantity = cart.reduce((acc, curr) => {
         return acc + curr.quantity;
@@ -31,16 +38,10 @@ const CartButton = () => {
         });
     }
 
-    /**
-     * Abre un modal.
-     */
     const openModal = () => {
         setIsOpen(true);
     };
 
-    /**
-     * Cierra un modal.
-     */
     const closeModal = () => {
         setIsOpen(false);
     };
@@ -83,26 +84,25 @@ const CartButton = () => {
                                                     <th>{producto.modelo}</th>
                                                     <th>{producto.descripcion}</th>
                                                     <th>{quantity}</th>
-                                                    <th className='has-text-primary'>${producto.precio}</th>
+                                                    <th className='has-text-primary'>{formatPrice(producto.precio)}</th>
                                                     <th><button onClick={() => removeItem(producto._id)}>❌</button></th>
                                                 </tr>
                                             </>
                                         )
-
                                     })
                                 }
                             </tbody>
                         </table>
                     </section>
                     <footer className="modal-card-foot is-flex is-flex-direction-column is-justity-content-center">
-                        <h3 className='mb-5 has-text-weight-bold'><span className='has-text-info'>Total:</span> ${totalPrice}</h3>
-                        <Link onClick={() => closeModal()} to="/checkout"
-                            className="button is-success">Ir a pagar</Link>
+                        <h3 className='mb-5 has-text-weight-bold'><span className='has-text-info'>Total:</span> {formatPrice(totalPrice)}</h3>
+                        <Link onClick={closeModal} to="/checkout" className="button is-success">Ir a pagar</Link>
                     </footer>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default CartButton;
+
