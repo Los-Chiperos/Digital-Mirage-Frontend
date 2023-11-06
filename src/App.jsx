@@ -27,12 +27,12 @@ function App() {
           <div>
             <Header />
             {/* Condicional para mostrar o no el Banner en función de la ruta */}
-            {window.location.pathname !== '/faq' && window.location.pathname !== '/checkout' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && window.location.pathname !== '/wishlist' && window.location.pathname !== '/productdetail' && <Banner />}
+            {/* {window.location.pathname !== '/faq' && window.location.pathname !== '/checkout' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && window.location.pathname !== '/wishlist' && window.location.pathname !== '/productdetail' && <Banner />} */}
             <main>
               <Router />
             </main>
             {/* Condicional para mostrar o no el Banner2 en función de la ruta */}
-            {window.location.pathname !== '/faq' && window.location.pathname !== '/checkout' && window.location.pathname !== '/wishlist' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && window.location.pathname !== '/productdetail' && <Banner2 />}
+            {/* {window.location.pathname !== '/faq' && window.location.pathname !== '/checkout' && window.location.pathname !== '/wishlist' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && window.location.pathname !== '/productdetail' && <Banner2 />} */}
             <CartButton />
             <Footer />
           </div>
