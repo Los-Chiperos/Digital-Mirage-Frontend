@@ -4,14 +4,13 @@ import Buscador from "../Fragments/Buscador";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 function Inicio() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const endpoint = "http://localhost:3001/products";
+    const endpoint = "https://back.digital-mirage.ar/productos";
 
     axios
       .get(endpoint)
@@ -25,16 +24,19 @@ function Inicio() {
         alert("No se encontraron artículos");
         setLoading(false);
       });
-  }, [navigate]);
+  }, []);
 
-console.log(products)
+  const handleProductClick = (productId) => {
+    navigate(`/productdetail/${productId}`);
+  };
+
   return (
     <>
       <Buscador />
       {loading ? (
-        <h2>Cargando</h2>
+        <h2>Cargando...</h2>
       ) : (
-        <ProductList products={products} />
+        <ProductList products={products} onProductClick={handleProductClick} />
       )}
     </>
   );

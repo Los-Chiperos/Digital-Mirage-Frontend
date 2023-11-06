@@ -58,5 +58,4 @@ const Buscador = () => {
         </form>
     );
 }
-
-export default Buscador;
+export default Buscador; 

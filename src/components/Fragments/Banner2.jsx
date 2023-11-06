@@ -7,7 +7,7 @@ function Banner2() {
         <p className="font-bold text-sm uppercase">Serivicios</p>
         <p className="text-3xl font-bold">Conoce nuestros nuevos productos</p>
         <p className="text-2xl mb-10 leading-none">Garantias de 60 dias para cada producto</p>
-        <a href="#" className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contactanos</a>
+        <a href="/contacto" className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contactanos</a>
       </div>
     </div>
   );

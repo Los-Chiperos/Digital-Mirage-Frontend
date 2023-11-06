@@ -1,0 +1,11 @@
+@media (max-width: 640px) {
+    .wish-list-section {
+      padding-bottom: 80px; /* Agrega espacio en la parte inferior de la sección para acomodar el footer */
+    }
+  
+    .footer {
+      position: fixed;
+      bottom: 0;
+    }
+  }
+  
