@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 import Select from 'react-select';
+import { toast, ToastContainer } from 'react-toastify'; // Importa la biblioteca de notificaciones
+import 'react-toastify/dist/ReactToastify.css';
 
 function formatPrice(price) {
   return price.toLocaleString("es-AR", {
@@ -8,6 +10,25 @@ function formatPrice(price) {
     currency: "ARS"
   });
 }
+
+const placeOrder = () => {
+  // Validación de campos obligatorios
+  if (!document.getElementById('first_name').value ||
+      !document.getElementById('last_name').value ||
+      !document.getElementById('country').value ||
+      !document.getElementById('street_address').value ||
+      !document.getElementById('city').value ||
+      !document.getElementById('region').value ||
+      !document.getElementById('postal_code').value ||
+      !document.getElementById('phone').value ||
+      !document.getElementById('email').value ||
+      !document.querySelector('input[name="enviarPedido"]:checked')) {
+    toast.error("Faltan datos para cargar");
+  } else {
+    toast.success("El pedido se acaba de realizar. Ahora se descargará un PDF de tu pedido.");
+    // Lógica para realizar el pedido y descargar el PDF
+  }
+};
 
 function Checkout() {
   const shippingOptions = [
@@ -351,12 +372,14 @@ function Checkout() {
   </div>
 </div>
   
-  <button className="mt-4 mb-8 mx-auto w-medium text-center rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
+  <button
+  onClick={placeOrder}
+  className="mt-4 mb-8 mx-auto w-medium text-center rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
+>
   REALIZAR PEDIDO
 </button>
 
 </div>
-
  
             {/* Total Section */}
             <div className="mt-6 border-t border-b py-2">
@@ -381,6 +404,8 @@ function Checkout() {
 
 
         </div>
+        <ToastContainer />
+
       </div>
   );
 }
