@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 import Select from 'react-select';
-import { toast, ToastContainer } from 'react-toastify'; // Importa la biblioteca de notificaciones
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import jsPDF from 'jspdf';
+
 
 function formatPrice(price) {
   return price.toLocaleString("es-AR", {
@@ -10,8 +12,7 @@ function formatPrice(price) {
     currency: "ARS"
   });
 }
-
-const placeOrder = () => {
+const placeOrder = (cart, totalPrice, selectedShippingOption) => {
   // Validación de campos obligatorios
   if (!document.getElementById('first_name').value ||
       !document.getElementById('last_name').value ||
@@ -26,8 +27,38 @@ const placeOrder = () => {
     toast.error("Faltan datos para cargar");
   } else {
     toast.success("El pedido se acaba de realizar. Ahora se descargará un PDF de tu pedido.");
-    // Lógica para realizar el pedido y descargar el PDF
+    generatePDF(cart, totalPrice, selectedShippingOption);
   }
+};
+
+const generatePDF = (cart, totalPrice, selectedShippingOption) => {
+  const doc = new jsPDF();
+  doc.setFontSize(14);
+
+  // Encabezado personalizado
+  doc.setFontSize(12);
+  doc.text("Información del Cliente:", 20, 30);
+  doc.text(`Nombre: ${document.getElementById('first_name').value} ${document.getElementById('last_name').value}`, 20, 40);
+
+// Detalles del pedido (productos en el carrito)
+doc.setFontSize(12);
+doc.text("Detalles del Pedido:", 20, 60);
+let y = 70;
+cart.forEach((producto) => {
+  const itemText = `${producto.marca} ${producto.modelo} - Cantidad: ${producto.quantity} - Precio: ${formatPrice(producto.precio)}`;
+  doc.text(itemText, 20, y);
+  y += 10;
+});
+
+ // Información de envío, subtotal y total
+ doc.setFontSize(12);
+ doc.text("Información de Envío:", 20, y + 10);
+ // ... (información de envío) ...
+ doc.text("Subtotal: " + formatPrice(totalPrice), 20, y + 30);
+ doc.text("Total: " + formatPrice(totalPrice + selectedShippingOption.cost), 20, y + 40);
+
+ // Guardar y descargar el PDF automáticamente
+ doc.output('save', 'pedido.pdf');
 };
 
 function Checkout() {
