@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
+import Select from 'react-select';
 
 function formatPrice(price) {
   return price.toLocaleString("es-AR", {
@@ -133,6 +134,7 @@ function Checkout() {
         <br></br>
         <br></br>
 
+        <br></br>
         <br></br>
 
           <p className="text-xl font-medium">Detalles del pago</p>
@@ -291,8 +293,16 @@ function Checkout() {
 
 <label className="block text-sm font-medium mt-4 mb-2">¿Ya sos socio de Digital Mirage?</label>
 <div className="relative">
-  {/* Select for ¿Ya sos socio de Digital Mirage? */}
+  <select
+    id="membership_status"
+    name="membership_status"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+  >
+    <option value="si">Sí</option>
+    <option value="no">No</option>
+  </select>
 </div>
+
 
 <label htmlFor="customer_number" className="mt-4 mb-2 block text-sm font-medium">Número de cliente (opcional)</label>
 <div className="relative">
@@ -305,8 +315,7 @@ function Checkout() {
   />
 </div>
 
-<label className="block text-sm font-medium mt-4 mb-2">INFORMACIÓN ADICIONAL</label>
-
+<br></br>
 <label htmlFor="order_notes" className="block text-sm font-medium">Notas del pedido (opcional)</label>
 <div className="relative">
   <textarea
@@ -316,6 +325,36 @@ function Checkout() {
     rows="4"
     placeholder="Notas del pedido (opcional)"
   ></textarea>
+  <div className="mt-4">
+  <label className="block text-sm font-medium">¿Quieres que te enviemos al correo este pedido?</label>
+  <div className="flex space-x-4">
+    <div className="flex items-center">
+      <input
+        type="radio"
+        id="enviarPedidoSi"
+        name="enviarPedido"
+        value="si"
+        required
+      />
+      <label htmlFor="enviarPedidoSi" className="ml-2">Sí</label>
+    </div>
+    <div className="flex items-center">
+      <input
+        type="radio"
+        id="enviarPedidoNo"
+        name="enviarPedido"
+        value="no"
+        required
+      />
+      <label htmlFor="enviarPedidoNo" className="ml-2">No</label>
+    </div>
+  </div>
+</div>
+  
+  <button className="mt-4 mb-8 mx-auto w-medium text-center rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
+  REALIZAR PEDIDO
+</button>
+
 </div>
 
  
@@ -340,9 +379,6 @@ function Checkout() {
             </div>
           </div>
 
-          <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
-  REALIZAR PEDIDO
-</button>
 
         </div>
       </div>
