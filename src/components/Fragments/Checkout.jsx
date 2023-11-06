@@ -128,25 +128,197 @@ function Checkout() {
           </form>
         </div>
 
-        <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+        <div className="mt-10 bg-gray-50 px-4 pt-16 lg:mt-0 md:py-4 ">
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <br></br>
+
           <p className="text-xl font-medium">Detalles del pago</p>
           <p className="text-gray-400">Complete su pedido proporcionando sus datos de pago.</p>
 
           {/* Payment Form */}
-          <div>
-            <label htmlFor="email" className="mt-4 mb-2 block text-sm font-medium">Correo Electrónico</label>
-            <div className="relative">
-              <input
-                type="text"
-                id="email"
-                name="email"
-                className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-                placeholder="tucorreo@gmail.com"
-              />
-            </div>
+    
+        
 
-            {/* Other input fields go here... */}
+           {/* Other input fields go here... */}
 
+           <label className="block text-sm font-medium mt-4 mb-2">DETALLES DE FACTURACIÓN</label>
+
+<label htmlFor="first_name" className="mt-4 mb-2 block text-sm font-medium">Nombre *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="first_name"
+    name="first_name"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Nombre"
+  />
+</div>
+
+<label htmlFor="last_name" className="mt-4 mb-2 block text-sm font-medium">Apellidos *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="last_name"
+    name="last_name"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Apellidos"
+  />
+</div>
+
+<label htmlFor="company" className="mt-4 mb-2 block text-sm font-medium">Nombre de la empresa (opcional)</label>
+<div className="relative">
+  <input
+    type="text"
+    id="company"
+    name="company"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Nombre de la empresa (opcional)"
+  />
+</div>
+
+<label htmlFor="country" className="mt-4 mb-2 block text-sm font-medium">País / Región *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="country"
+    name="country"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="País / Región"
+  />
+</div>
+
+<label htmlFor="street_address" className="mt-4 mb-2 block text-sm font-medium">Dirección de la calle *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="street_address"
+    name="street_address"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Dirección de la calle"
+  />
+</div>
+
+<label htmlFor="apartment" className="mt-4 mb-2 block text-sm font-medium">Apartamento, habitación, etc. (opcional)</label>
+<div className="relative">
+  <input
+    type="text"
+    id="apartment"
+    name="apartment"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Apartamento, habitación, etc. (opcional)"
+  />
+</div>
+
+<label htmlFor="city" className="mt-4 mb-2 block text-sm font-medium">Población *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="city"
+    name="city"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Población"
+  />
+</div>
+
+<label htmlFor="region" className="mt-4 mb-2 block text-sm font-medium">Región / Provincia *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="region"
+    name="region"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Región / Provincia"
+  />
+</div>
+
+<label htmlFor="postal_code" className="mt-4 mb-2 block text-sm font-medium">Código postal *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="postal_code"
+    name="postal_code"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Código postal"
+  />
+</div>
+
+<label htmlFor="phone" className="mt-4 mb-2 block text-sm font-medium">Teléfono *</label>
+<div className="relative">
+  <input
+    type="text"
+    id="phone"
+    name="phone"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Teléfono"
+  />
+</div>
+
+<label htmlFor="email" className="mt-4 mb-2 block text-sm font-medium">Dirección de correo electrónico *</label>
+<div className="relative">
+  <input
+    type="email"
+    id="email"
+    name="email"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Dirección de correo electrónico"
+  />
+</div>
+
+<label htmlFor="dni" className="mt-4 mb-2 block text-sm font-medium">DNI (opcional)</label>
+<div className="relative">
+  <input
+    type="text"
+    id="dni"
+    name="dni"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="DNI (opcional)"
+  />
+</div>
+
+<label htmlFor="cuit" className="mt-4 mb-2 block text-sm font-medium">CUIT (opcional)</label>
+<div className="relative">
+  <input
+    type="text"
+    id="cuit"
+    name="cuit"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="CUIT (opcional)"
+  />
+</div>
+
+<label className="block text-sm font-medium mt-4 mb-2">¿Ya sos socio de Digital Mirage?</label>
+<div className="relative">
+  {/* Select for ¿Ya sos socio de Digital Mirage? */}
+</div>
+
+<label htmlFor="customer_number" className="mt-4 mb-2 block text-sm font-medium">Número de cliente (opcional)</label>
+<div className="relative">
+  <input
+    type="text"
+    id="customer_number"
+    name="customer_number"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    placeholder="Número de cliente (opcional)"
+  />
+</div>
+
+<label className="block text-sm font-medium mt-4 mb-2">INFORMACIÓN ADICIONAL</label>
+
+<label htmlFor="order_notes" className="block text-sm font-medium">Notas del pedido (opcional)</label>
+<div className="relative">
+  <textarea
+    id="order_notes"
+    name="order_notes"
+    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
+    rows="4"
+    placeholder="Notas del pedido (opcional)"
+  ></textarea>
+</div>
+
+ 
             {/* Total Section */}
             <div className="mt-6 border-t border-b py-2">
               <div className="flex items-center justify-between">
@@ -169,11 +341,11 @@ function Checkout() {
           </div>
 
           <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
-            REALIZAR PEDIDO
-          </button>
+  REALIZAR PEDIDO
+</button>
+
         </div>
       </div>
-    </div>
   );
 }
 
