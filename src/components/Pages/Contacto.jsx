@@ -11,7 +11,7 @@ const handleFormSubmit = (e) => {
   if (formData.nombre === '' || formData.apellido === '' || formData.email === '' || formData.mensaje === '') {
     toast.error('Faltan datos. Por favor, complete todos los campos.', { autoClose: 7000 });
   } else {
-    fetch('http://send-email.digital-mirage.ar/enviar-correo', {
+    fetch('https://send-email.digital-mirage.ar/enviar-correo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
