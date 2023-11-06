@@ -5,21 +5,39 @@ import 'react-toastify/dist/ReactToastify.css';
 const Contacto = () => {
   const [formData, setFormData] = useState({ nombre: '', apellido: '', email: '', mensaje: '' });
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (formData.nombre === '' || formData.apellido === '' || formData.email === '' || formData.mensaje === '') {
-      toast.error('Faltan datos. Por favor, complete todos los campos.', { autoClose: 7000 });
-    } else {
-      toast.success('Gracias por tu consulta, en breve nos pondremos en contacto. Gracias por elegir Digital Mirage', {
-        autoClose: 7000,
-        onClose: () => {
-          // Aquí puedes redirigir al menú principal después de que se cierre el mensaje de éxito.
-          // Por ejemplo: window.location.href = '/menu-principal';
-        },
+// Añade una nueva función para enviar el formulario al servidor
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+  if (formData.nombre === '' || formData.apellido === '' || formData.email === '' || formData.mensaje === '') {
+    toast.error('Faltan datos. Por favor, complete todos los campos.', { autoClose: 7000 });
+  } else {
+    fetch('back.digital-mirage.ar/enviar-correo', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message) {
+          toast.success(data.message, {
+            autoClose: 7000,
+            onClose: () => {
+              // Aquí puedes redirigir al menú principal después de que se cierre el mensaje de éxito.
+              // Por ejemplo: window.location.href = '/menu-principal';
+            },
+          });
+        } else {
+          toast.error('Hubo un problema al enviar el correo.', { autoClose: 7000 });
+        }
+      })
+      .catch((error) => {
+        toast.error('Hubo un problema al enviar el correo.', { autoClose: 7000 });
       });
-      // Aquí puedes enviar los datos del formulario a tu servidor o realizar otras acciones.
-    }
-  };
+  }
+};
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
