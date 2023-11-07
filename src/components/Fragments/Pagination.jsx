@@ -2,20 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Pagination = ({ totalDePaginas, currentPage, handleGoToPage, handlePreviousPage, handleNextPage }) => {
-
     const pageLinks = [];
 
     for (let i = 1; i <= totalDePaginas; i++) {
         pageLinks.push(i);
     }
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <>
             <nav className="pagination is-centered" role="navigation" aria-label="pagination">
-                <Link className="pagination-previous" onClick={() => { handlePreviousPage() }}
+                <Link className="pagination-previous" onClick={() => { handlePreviousPage(); scrollToTop(); }}
                     disabled={currentPage === 1}>Previous</Link>
                 <Link className="pagination-next"
-                    onClick={() => { handleNextPage() }}
+                    onClick={() => { handleNextPage(); scrollToTop(); }}
                     disabled={currentPage === totalDePaginas}>Next page</Link>
                 <ul className="pagination-list">
                     {
@@ -24,7 +27,7 @@ const Pagination = ({ totalDePaginas, currentPage, handleGoToPage, handlePreviou
                                 <li key={page}>
                                     <Link to={`#/${page}`} className={`pagination-link ${currentPage === page ? "is-current" : ""}`}
                                         aria-label={`Goto page ${page}`}
-                                        onClick={() => handleGoToPage(page)}>{page}</Link>
+                                        onClick={() => { handleGoToPage(page); scrollToTop(); }}>{page}</Link>
                                 </li>
                             )
                         })
