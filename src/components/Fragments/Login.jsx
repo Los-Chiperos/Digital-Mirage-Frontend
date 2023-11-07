@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useContext } from 'react';
+import { LoginContext } from '../Context/LoginContext';
 
 const Login = () => {
+    const [login, setLogin] = useContext(LoginContext);
     const navigate = useNavigate();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +53,9 @@ const Login = () => {
         if (isValidPassword) {
             try {
                 const response = await axios.post('https://back.digital-mirage.ar/user/login', { username, password });
+                setLogin(username);
                 console.log(`Respuesta del servidor: ${response.data}`);
+                setIsOpen(false);
                 navigate("/");
             } catch (error) {
                 console.log(`Error al enviar la solicitud de ingreso: ${error}`);
@@ -61,11 +66,11 @@ const Login = () => {
     return (
         <>
             <button
-    onClick={openModal}
-    className='button is-success hover:bg-esmerald-100 mr-2 text-sm md:text-base'
->
-    Ingresar
-</button>
+                onClick={openModal}
+                className='button is-success hover:bg-esmerald-100 mr-2 text-sm md:text-base'
+            >
+                Ingresar
+            </button>
             <hr />
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>

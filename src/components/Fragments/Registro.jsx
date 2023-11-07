@@ -8,17 +8,17 @@ const Registro = () => {
 
     // Estado para almacenar los datos del formulario
     const [formData, setFormData] = useState({
-        usuario: '',
-        password: '',
         nombre: '',
         apellido: '',
+        username: '',
+        password: '',
         roles: [null, "client"],
         email: ''
     });
 
     // Estado para gestionar mensajes de error
     const [errors, setErrors] = useState({
-        usuario: '',
+        username: '',
         password: '',
         nombreApellido: '',
         email: ''
@@ -33,7 +33,7 @@ const Registro = () => {
 
         let error = '';
 
-        if (name === 'usuario') {
+        if (name === 'username') {
             // Validación del usuario
             error = validateUsuario(value) ? '' : "El usuario debe tener al menos 6 caracteres";
         } else if (name === 'password') {
@@ -108,13 +108,12 @@ const Registro = () => {
         });
 
         setErrors({
-            usuario: '',
+            username: '',
             password: '',
             nombreApellido: '',
             email: ''
         });
     };
-
 
     return (
         <>
@@ -138,15 +137,15 @@ const Registro = () => {
                                 <label className="label">Usuario</label>
                                 <div className="control">
                                     <input
-                                        name="usuario"
-                                        value={formData.usuario}
+                                        name="username"
+                                        value={formData.username}
                                         onChange={handleInputChange}
-                                        className={`input ${errors.usuario ? 'is-danger' : 'is-success'}`}
+                                        className={`input ${errors.username ? 'is-danger' : 'is-success'}`}
                                         type="text"
                                         placeholder="Tu nombre de usuario"
                                     />
                                 </div>
-                                {errors.usuario && <p className="help is-danger">{errors.usuario}</p>}
+                                {errors.username && <p className="help is-danger">{errors.username}</p>}
                             </div>
 
                             <div className="field">
@@ -163,7 +162,6 @@ const Registro = () => {
                                 </div>
                                 {errors.password && <p className="help is-danger">{errors.password}</p>}
                             </div>
-
 
                             <div className="field">
                                 <label className="label">Nombre</label>
@@ -225,7 +223,6 @@ const Registro = () => {
 }
 
 export default Registro;
-
 
 /*
                                         Documentación del componente
