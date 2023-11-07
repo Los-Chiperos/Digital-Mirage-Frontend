@@ -9,17 +9,17 @@ const Registro = () => {
     // Estado para almacenar los datos del formulario
     const [formData, setFormData] = useState({
         usuario: '',
-        contrasena: '',
+        password: '',
         nombre: '',
         apellido: '',
-        email: '',
-        rol: 'client'
+        roles: [null, "client"],
+        email: ''
     });
 
     // Estado para gestionar mensajes de error
     const [errors, setErrors] = useState({
         usuario: '',
-        contrasena: '',
+        password: '',
         nombreApellido: '',
         email: ''
     });
@@ -36,7 +36,7 @@ const Registro = () => {
         if (name === 'usuario') {
             // Validación del usuario
             error = validateUsuario(value) ? '' : "El usuario debe tener al menos 6 caracteres";
-        } else if (name === 'contrasena') {
+        } else if (name === 'password') {
             // Validación de la contraseña
             error = validateContrasena(value) ? '' : "La contraseña debe tener al menos 6 caracteres, una letra mayúscula y una letra minúscula";
         } else if (name === 'nombre' || name === 'apellido') {
@@ -56,30 +56,27 @@ const Registro = () => {
      * Función que maneja el envío del formulario.
      * @param {Event} ev - El evento de envío del formulario.
      */
-    const handleSubmit = (ev) => {
+    const handleSubmit = async (ev) => {
         ev.preventDefault();
 
-        if (formData) {
-            // Realiza una solicitud POST a la URL del servidor con los datos del formulario
-            axios.post('https://back.digital-mirage.ar/user/newuser', formData)
-                .then((response) => {
-                    if (!response.data) {
-                        alert("Formulario no enviado, datos no válidos");
-                    } else {
-                        alert("El formulario se envió correctamente");
-                        // Navega a la página de inicio de sesión
-                        setIsOpen(false);
-                    }
-                    console.log('Respuesta del servidor:', response.data);
-                })
-                .catch((error) => {
-                    // Maneja los errores de la solicitud
-                    alert("Error al enviar los datos!");
-                    console.error('Error en la solicitud:', error);
-                });
+        if (Object.values(errors).every((error) => !error)) {
+            try {
+                const response = await axios.post('https://back.digital-mirage.ar/user/newuser', formData);
+
+                if (response.data) {
+                    alert('El formulario se envió correctamente');
+                    setIsOpen(false);
+                } else {
+                    alert('Formulario no enviado, datos no válidos');
+                }
+
+                console.log('Respuesta del servidor:', response.data);
+            } catch (error) {
+                alert('Error al enviar los datos');
+                console.error('Error en la solicitud:', error);
+            }
         } else {
-            console.log("Form data vacío");
-            alert("Debe llenar el formulario");
+            alert('Debe corregir los errores en el formulario');
         }
     };
 
@@ -104,7 +101,7 @@ const Registro = () => {
         // Restablece los datos del formulario y los errores a sus valores iniciales
         setFormData({
             usuario: '',
-            contrasena: '',
+            password: '',
             nombre: '',
             apellido: '',
             email: ''
@@ -112,7 +109,7 @@ const Registro = () => {
 
         setErrors({
             usuario: '',
-            contrasena: '',
+            password: '',
             nombreApellido: '',
             email: ''
         });
@@ -136,7 +133,7 @@ const Registro = () => {
                         <button onClick={closeModal} className="delete" aria-label="close"></button>
                     </header>
                     <section className="modal-card-body">
-                        <form action='' method='POST' onSubmit={handleSubmit}>
+                        <form action='' method='POST'>
                             <div className="field">
                                 <label className="label">Usuario</label>
                                 <div className="control">
@@ -157,15 +154,16 @@ const Registro = () => {
                                 <div className="control">
                                     <input
                                         name="password"
-                                        value={formData.contrasena}
+                                        value={formData.password}
                                         onChange={handleInputChange}
-                                        className={`input ${errors.contrasena ? 'is-danger' : 'is-success'}`}
-                                        type="text"
-                                        placeholder="Tu nombre de usuario"
+                                        className={`input ${errors.password ? 'is-danger' : 'is-success'}`}
+                                        type="password"
+                                        placeholder="Tu Contraseña"
                                     />
                                 </div>
-                                {errors.contrasena && <p className="help is-danger">{errors.contrasena}</p>}
+                                {errors.password && <p className="help is-danger">{errors.password}</p>}
                             </div>
+
 
                             <div className="field">
                                 <label className="label">Nombre</label>
@@ -176,7 +174,7 @@ const Registro = () => {
                                         onChange={handleInputChange}
                                         className={`input ${errors.nombre ? 'is-danger' : 'is-success'}`}
                                         type="text"
-                                        placeholder="Tu nombre de usuario"
+                                        placeholder="Tu Nombre"
                                     />
                                 </div>
                                 {errors.nombre && <p className="help is-danger">{errors.nombre}</p>}
@@ -191,7 +189,7 @@ const Registro = () => {
                                         onChange={handleInputChange}
                                         className={`input ${errors.apellido ? 'is-danger' : 'is-success'}`}
                                         type="text"
-                                        placeholder="Tu nombre de usuario"
+                                        placeholder="Tu Apellido"
                                     />
                                 </div>
                                 {errors.apellido && <p className="help is-danger">{errors.apellido}</p>}
@@ -206,7 +204,7 @@ const Registro = () => {
                                         onChange={handleInputChange}
                                         className={`input ${errors.email ? 'is-danger' : 'is-success'}`}
                                         type="text"
-                                        placeholder="Tu nombre de usuario"
+                                        placeholder="Tu Email"
                                     />
                                 </div>
                                 {errors.email && <p className="help is-danger">{errors.email}</p>}
@@ -215,7 +213,9 @@ const Registro = () => {
                         </form>
                     </section>
                     <footer className="modal-card-foot">
-                        <button type="submit" className="button is-success">Registrarse</button>
+                        <button type="submit" 
+                        className="button is-success"
+                        onClick={handleSubmit}>Registrarse</button>
                         <button className='button is-danger' onClick={cleanForm}>Limpiar</button>
                     </footer>
                 </div>
