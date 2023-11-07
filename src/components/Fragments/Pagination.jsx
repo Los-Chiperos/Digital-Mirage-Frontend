@@ -16,10 +16,10 @@ const Pagination = ({ totalDePaginas, currentPage, handleGoToPage, handlePreviou
         <>
             <nav className="pagination is-centered" role="navigation" aria-label="pagination">
                 <Link className="pagination-previous" onClick={() => { handlePreviousPage(); scrollToTop(); }}
-                    disabled={currentPage === 1}>Previous</Link>
+                    disabled={currentPage === 1}>Anterior Página</Link>
                 <Link className="pagination-next"
                     onClick={() => { handleNextPage(); scrollToTop(); }}
-                    disabled={currentPage === totalDePaginas}>Next page</Link>
+                    disabled={currentPage === totalDePaginas}>Siguiente Página</Link>
                 <ul className="pagination-list">
                     {
                         pageLinks.map(page => {

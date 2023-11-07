@@ -18,7 +18,6 @@ const placeOrder = (cart, totalPrice, selectedShippingOption) => {
       !document.getElementById('last_name').value ||
       !document.getElementById('country').value ||
       !document.getElementById('street_address').value ||
-      !document.getElementById('city').value ||
       !document.getElementById('region').value ||
       !document.getElementById('postal_code').value ||
       !document.getElementById('phone').value ||
@@ -40,25 +39,25 @@ const generatePDF = (cart, totalPrice, selectedShippingOption) => {
   doc.text("Información del Cliente:", 20, 30);
   doc.text(`Nombre: ${document.getElementById('first_name').value} ${document.getElementById('last_name').value}`, 20, 40);
 
-// Detalles del pedido (productos en el carrito)
-doc.setFontSize(12);
-doc.text("Detalles del Pedido:", 20, 60);
-let y = 70;
-cart.forEach((producto) => {
-  const itemText = `${producto.marca} ${producto.modelo} - Cantidad: ${producto.quantity} - Precio: ${formatPrice(producto.precio)}`;
-  doc.text(itemText, 20, y);
-  y += 10;
-});
+  // Detalles del pedido (productos en el carrito)
+  doc.setFontSize(12);
+  doc.text("Detalles del Pedido:", 20, 60);
+  let y = 70;
+  cart.forEach((producto) => {
+    const itemText = `${producto.marca} ${producto.modelo} - Cantidad: ${producto.quantity} - Precio: ${formatPrice(producto.precio)}`;
+    doc.text(itemText, 20, y);
+    y += 10;
+  });
 
- // Información de envío, subtotal y total
- doc.setFontSize(12);
- doc.text("Información de Envío:", 20, y + 10);
- // ... (información de envío) ...
- doc.text("Subtotal: " + formatPrice(totalPrice), 20, y + 30);
- doc.text("Total: " + formatPrice(totalPrice + selectedShippingOption.cost), 20, y + 40);
+  // Información de envío, subtotal y total
+  doc.setFontSize(12);
+  doc.text("Información de Envío:", 20, y + 10);
+  // ... (información de envío) ...
+  doc.text("Subtotal: " + formatPrice(totalPrice), 20, y + 30);
+  doc.text("Total: " + formatPrice(totalPrice + selectedShippingOption.cost), 20, y + 40);
 
- // Guardar y descargar el PDF automáticamente
- doc.output('save', 'pedido.pdf');
+  // Guardar y descargar el PDF automáticamente
+  doc.save('pedido.pdf');
 };
 
 function Checkout() {
@@ -266,16 +265,7 @@ function Checkout() {
   />
 </div>
 
-<label htmlFor="city" className="mt-4 mb-2 block text-sm font-medium">Población *</label>
-<div className="relative">
-  <input
-    type="text"
-    id="city"
-    name="city"
-    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-    placeholder="Población"
-  />
-</div>
+
 
 <label htmlFor="region" className="mt-4 mb-2 block text-sm font-medium">Región / Provincia *</label>
 <div className="relative">
@@ -403,10 +393,7 @@ function Checkout() {
   </div>
 </div>
   
-  <button
-  onClick={placeOrder}
-  className="mt-4 mb-8 mx-auto w-medium text-center rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
->
+  <button onClick={placeOrder} className="mt-4 mb-8 mx-auto w-medium text-center rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
   REALIZAR PEDIDO
 </button>
 
