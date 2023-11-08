@@ -8,6 +8,7 @@ import { ShoppingCartProvider } from './components/Context/ShoppingCartContext.j
 import CartButton from './components/Fragments/CartButton.jsx';
 import { LoginProvider } from './components/Context/LoginContext.jsx';
 import Banner from './components/Fragments/Banner.jsx';
+import Banner2 from './components/Fragments/Banner2.jsx';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +37,7 @@ function App() {
               {/* Condicional para mostrar o no el Banner2 en función de la ruta */}
               {/* {window.location.pathname !== '/faq' && window.location.pathname !== '/checkout' && window.location.pathname !== '/wishlist' && window.location.pathname !== '/contacto' && window.location.pathname !== '/nosotros' && window.location.pathname !== '/productdetail' && <Banner2 />} */}
               <CartButton />
+              <Banner2 />
               <Footer />
             </div>
           )}
