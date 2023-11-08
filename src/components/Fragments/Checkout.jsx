@@ -19,7 +19,6 @@ const placeOrder = (cart, totalPrice, selectedShippingOption) => {
       !document.getElementById('country').value ||
       !document.getElementById('street_address').value ||
       !document.getElementById('region').value ||
-      !document.getElementById('postal_code').value ||
       !document.getElementById('phone').value ||
       !document.getElementById('email').value ||
       !document.querySelector('input[name="enviarPedido"]:checked')) {
@@ -221,19 +220,9 @@ function Checkout() {
   />
 </div>
 
-<label htmlFor="company" className="mt-4 mb-2 block text-sm font-medium">Nombre de la empresa (opcional)</label>
 <div className="relative">
-  <input
-    type="text"
-    id="company"
-    name="company"
-    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-    placeholder="Nombre de la empresa (opcional)"
-  />
-</div>
+<label htmlFor="country" className="mt-4 mb-2 block text-sm font-medium">País *</label>
 
-<label htmlFor="country" className="mt-4 mb-2 block text-sm font-medium">País / Región *</label>
-<div className="relative">
   <input
     type="text"
     id="country"
@@ -254,17 +243,6 @@ function Checkout() {
   />
 </div>
 
-<label htmlFor="apartment" className="mt-4 mb-2 block text-sm font-medium">Apartamento, habitación, etc. (opcional)</label>
-<div className="relative">
-  <input
-    type="text"
-    id="apartment"
-    name="apartment"
-    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-    placeholder="Apartamento, habitación, etc. (opcional)"
-  />
-</div>
-
 
 
 <label htmlFor="region" className="mt-4 mb-2 block text-sm font-medium">Región / Provincia *</label>
@@ -274,7 +252,7 @@ function Checkout() {
     id="region"
     name="region"
     className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-    placeholder="Región / Provincia"
+    placeholder="Provincia / Región "
   />
 </div>
 
@@ -322,40 +300,8 @@ function Checkout() {
   />
 </div>
 
-<label htmlFor="cuit" className="mt-4 mb-2 block text-sm font-medium">CUIT (opcional)</label>
-<div className="relative">
-  <input
-    type="text"
-    id="cuit"
-    name="cuit"
-    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-    placeholder="CUIT (opcional)"
-  />
-</div>
-
-<label className="block text-sm font-medium mt-4 mb-2">¿Ya sos socio de Digital Mirage?</label>
-<div className="relative">
-  <select
-    id="membership_status"
-    name="membership_status"
-    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-  >
-    <option value="si">Sí</option>
-    <option value="no">No</option>
-  </select>
-</div>
 
 
-<label htmlFor="customer_number" className="mt-4 mb-2 block text-sm font-medium">Número de cliente (opcional)</label>
-<div className="relative">
-  <input
-    type="text"
-    id="customer_number"
-    name="customer_number"
-    className="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus-border-blue-500 focus-ring-blue-500"
-    placeholder="Número de cliente (opcional)"
-  />
-</div>
 
 <br></br>
 <label htmlFor="order_notes" className="block text-sm font-medium">Notas del pedido (opcional)</label>
