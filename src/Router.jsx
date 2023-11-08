@@ -10,7 +10,7 @@ import Faq from "./components/Pages/SubPages/Faq";
 import ProductDetail from "./components/Fragments/ProductDetail.jsx";
 import Checkout from "./components/Fragments/Checkout.jsx";
 import WishList from "./components/Fragments/WishList.jsx";
-
+import Resultados from "./components/Fragments/Resultados.jsx";
 
 const Router = () => {
     return (
@@ -27,10 +27,7 @@ const Router = () => {
                 <Route exact path="/checkout" element={<Checkout />} />
                 <Route exact path="/wishlist" element={<WishList />} />
                 <Route exact path="/filter" element={<WishList />} />
-
-
-
-
+                <Route exact path="/resultados" Component={Resultados} />
             </Routes>
         </div>
     )
