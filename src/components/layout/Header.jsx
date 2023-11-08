@@ -19,11 +19,7 @@ const Header = () => {
 
     return (
         <div>
-<<<<<<< HEAD
-            <nav className={`bg-stone-950 fixed w-full z-20 top-0 left-0 border-b 'border-gray-200'}`}>
-=======
             <nav className="bg-black fixed w-full z-20 top-0 left-0 border-b">
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to="http://digital-mirage.ar/" className="flex items-center">
                         <img
@@ -33,12 +29,6 @@ const Header = () => {
                         />
                     </Link>
 
-<<<<<<< HEAD
-                    {/* Agregar el interruptor de modo oscuro aquí */}
-                   
-
-=======
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                     <div className="flex md:order-2">
                         {login ? (
                             <>
@@ -55,16 +45,8 @@ const Header = () => {
                         )}
                         <button
                             onClick={toggleMenu}
-<<<<<<< HEAD
-                            type=""
-                            className={`${darkMode
-                                ? 'text-gray-400'
-                                : 'text-gray-400'
-                                } inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 `}
-=======
                             type="button"
                             className="text-gray-500 inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                         >
                             <span className="sr-only">Abrir menú principal</span>
                             <svg
@@ -93,15 +75,7 @@ const Header = () => {
                             <li>
                                 <Link
                                     to="/"
-<<<<<<< HEAD
-                                    className={`block py-2 pl-3 pr-4  hover:text-blue-500 ${darkMode ? 'text-blue-500 ' : 'text-white'
-                                        } ${darkMode
-                                            ? 'bg-gray-700 '
-                                            : 'bg-gray-800'
-                                        } rounded md:bg-transparent md:text-blue-700 md:p-0`}
-=======
                                     className="block py-2 pl-3 pr-4  hover:text-blue-500 text-white bg-gray-800 rounded md:bg-transparent md:text-blue-700 md:p-0"
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                                     aria-current="page"
                                 >
                                     Inicio
@@ -110,15 +84,7 @@ const Header = () => {
                             <li>
                                 <Link
                                     to="/nosotros"
-<<<<<<< HEAD
-                                    className={`block hover:text-blue-500 py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 ' : 'text-white'
-                                        } ${darkMode
-                                            ? 'bg-white '
-                                            : 'bg-gray-800'
-                                        } rounded md:bg-transparent md:text-blue-700 md:p-0`}
-=======
                                     className="block hover:text-blue-500 py-2 pl-3 pr-4 text-white bg-gray-800 rounded md:bg-transparent md:text-blue-700 md:p-0"
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                                     aria-current="page"
                                 >
                                     Nosotros
@@ -127,15 +93,7 @@ const Header = () => {
                             <li>
                                 <Link
                                     to="/faq"
-<<<<<<< HEAD
-                                    className={`block py-2 pl-3 pr-4  hover:text-blue-500 ${darkMode ? 'text-blue-500' : 'text-white'
-                                        } ${darkMode
-                                            ? 'bg-white '
-                                            : 'bg-gray-800'
-                                        } rounded md:bg-transparent md:text-blue-700 md:p-0`}
-=======
                                     className="block py-2 pl-3 pr-4  hover:text-blue-500 text-white bg-gray-800 rounded md:bg-transparent md:text-blue-700 md:p-0"
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                                     aria-current="page"
                                 >
                                     FAQ
@@ -144,15 +102,7 @@ const Header = () => {
                             <li>
                                 <Link
                                     to="/contacto"
-<<<<<<< HEAD
-                                    className={`block py-2 pl-3 pr-4  hover:text-blue-500 ${darkMode ? '' : 'text-white'
-                                        } ${darkMode
-                                            ? 'bg-white-700 '
-                                            : 'bg-gray-800'
-                                        } rounded md:bg-transparent md:text-blue-700 md:p-0`}
-=======
                                     className="block py-2 pl-3 pr-4  hover:text-blue-500 text-white bg-white-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
->>>>>>> e2aee4b2406c7c16f89bd2bc55f2bf08c58d0826
                                     aria-current="page"
                                 >
                                     Contacto
