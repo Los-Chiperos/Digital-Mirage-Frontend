@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Banner from "./Banner";
+import Banner from "./Banner.jsx";
 
 function ProductDetail() {
   const { productId } = useParams();
