@@ -65,8 +65,8 @@ function CartButton() {
             </button>
 
             <div className={`modal ${isOpen ? 'is-active' : ''}`}>
-  <div className="modal-background"></div>
-  <div className="modal-card" style={{ maxWidth: '80%', width: 'auto' }}> {/* Estilos para el ancho */}
+                <div className="modal-background"></div>
+                <div className="modal-card" style={{ maxWidth: '80%', width: 'auto' }}> {/* Estilos para el ancho */}
                     <header className="modal-card-head">
                         <p className="modal-card-title has-text-primary">Productos en el carrito</p>
                         <button onClick={closeModal} className="delete" aria-label="close"></button>
