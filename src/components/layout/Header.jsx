@@ -4,6 +4,8 @@ import Registro from '../Fragments/Registro.jsx';
 import Login from '../Fragments/Login.jsx';
 import { Switch } from '@headlessui/react';
 import { LoginContext } from '../Context/LoginContext.jsx';
+import "../Css/filter.css"
+
 
 const Header = () => {
     const [login, setLogin] = useContext(LoginContext);
@@ -107,19 +109,6 @@ const Header = () => {
                                     aria-current="page"
                                 >
                                     Inicio
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    to="/categorias"
-                                    className={`block hover:text-blue-500 py-2 pl-3 pr-4 ${darkMode ? 'text-blue-500 dark:md:text-white' : 'text-white'
-                                        } ${darkMode
-                                            ? 'bg-white dark:bg-gray-800'
-                                            : 'bg-gray-800'
-                                        } rounded md:bg-transparent md:text-blue-700 md:p-0`}
-                                    aria-current="page"
-                                >
-                                    Categorias
                                 </Link>
                             </li>
                             <li>
