@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Buscador = () => {
-    // Obtenemos la función de navegación de react-router-dom
+    // guardamos la funcion para navegar en una variable
     const navigate = useNavigate();
 
     // Función que se ejecuta cuando se envía el formulario
