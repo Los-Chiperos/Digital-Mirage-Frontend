@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 import { Switch } from '@headlessui/react';
+import "../Css/card.css"
 
 function formatPrice(price) {
     return price.toLocaleString("es-AR", {
@@ -92,7 +93,7 @@ function ProductCard({ _id, modelo, marca, descripcion, precio, url_image, onPro
     };
 
     return (
-        <div className={`w-full h-full max-w-sm ${darkMode ? 'bg-gray-800' : 'bg-white'} border border-gray-200 rounded-lg shadow ${darkMode ? 'dark:border-gray-700' : 'dark:border-gray-200'}`}>
+<div className={`w-full h-full max-w-sm ${darkMode ? 'bg-gray-800' : 'bg-white'} border border-gray-200 rounded-lg shadow ${darkMode ? 'dark:border-gray-700' : 'dark:border-gray-200'} product-card`}>
             <a href={`/productdetail/${_id}`} onClick={onProductClick}>
                 <img className="p-8 rounded-t-lg object-contain" src={url_image} alt="product image" style={imgEstilo} />
             </a>

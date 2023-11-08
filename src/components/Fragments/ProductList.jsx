@@ -40,7 +40,7 @@ function ProductList({ products, onProductClick }) {
       <Filter/>
       <br></br>
 
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-black">Productos destacados</h2>
+        <h2 className="text-2xl font-semibold text-white ">Todos nuestros productos</h2>
         <div className="flex justify-center flex-wrap gap-4">
           {productosActuales.map((product) => (
             <ProductCard
