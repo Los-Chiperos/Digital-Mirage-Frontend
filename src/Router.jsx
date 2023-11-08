@@ -26,6 +26,8 @@ const Router = () => {
                 <Route path="/productdetail/:productId" element={<ProductDetail />} />
                 <Route exact path="/checkout" element={<Checkout />} />
                 <Route exact path="/wishlist" element={<WishList />} />
+                <Route exact path="/filter" element={<WishList />} />
+
 
 
 

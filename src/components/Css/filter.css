@@ -1,0 +1,70 @@
+/* Estilos generales (para pantallas más grandes) */
+.filter-container {
+    position: relative;
+}
+
+.filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-icon {
+    font-size: 24px;
+    float: right;
+}
+
+.category-filter {
+    position: absolute;
+    right: 0;
+    display: flex; /* Mostrar las categorías en línea */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.category {
+    margin: 4px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.category.selected {
+    background-color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .filter-container {
+        position: relative;
+    }
+
+    .filter-icon {
+        font-size: 18px; /* Reduce el tamaño del icono en dispositivos móviles */
+    }
+
+    .category-filter {
+        padding: 3px; /* Reduce el relleno del filtro en dispositivos móviles */
+        position: relative; /* No fijar el filtro en la pantalla */
+        font-size: 14px; /* Reduce el tamaño del texto */
+        display: flex;
+        flex-wrap: wrap; /* Permitir que las categorías se ajusten en varias filas */
+    }
+}
+
+  
